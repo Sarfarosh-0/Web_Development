@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Interactive & Misc Tags</title>
+</head>
+
+<body>
+    <!-- HTML INTERACTIVE & MISC TAGS -->
+
+    <!-- <details> — Expandable Content Container -->
+    <details>
+        <summary>More Info</summary>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur error, consectetur eveniet quo sequi
+            necessitatibus doloremque porro rerum quod eaque quae, in natus quibusdam quasi ea dignissimos ipsa nam
+            eligendi.</p>
+    </details>
+
+    <!-- <summary> — Title for <details -->
+    <summary> Read More</summary>
+
+    <!-- <dialog> — Dialog / Modal Box -->
+    <dialog id="box">
+        <p>Are you Sure ?</p>
+        <button onclick="box.close()">Close</button>
+    </dialog>
+    <button onclick="box.showModal()">Open Dialog</button>
+
+    <!-- <progress> — Progress Bar -->
+    <progress value="60" max="100"></progress>
+
+    <!-- <meter> — Measurement Indicator -->
+    <meter value="7" min="0" max="10"></meter>
+
+    <!-- <template> — Hidden Reusable Content -->
+    <template id="Card">
+        <div class="card">
+            <h3>Title</h3>
+            <p>Description</p>
+        </div>
+    </template>
+
+    <!-- <noscript> — JavaScript Disabled Message -->
+    <noscript>
+        Please enable JavaScript to view this site.
+    </noscript>
+
+    <!-- <output> — Calculation Result -->
+    <form oninput="Result.value = Number(a.value) + Number(b.value)">
+        <input type="number" placeholder="Enter a Number" a Number" id="a">
+        +
+        <input type="number" placeholder="Enter a Number" Number" id="b">
+        =
+        <output name="Result"></output>
+    </form>
+
+</body>
+
+</html>
