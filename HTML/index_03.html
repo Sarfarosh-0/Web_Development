@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links & Media Tags</title>
+</head>
+
+<body>
+    <!-- LINKS & MEDIA TAGS -->
+
+    <!-- <a> — Anchor Tag (Link) -->
+    <a href="https://www.google.com">Go to Google</a>
+    <!-- Common attributes of Anchor Tag-->
+    <a href="about.html">About</a>
+    <a href="about.html" target="_blank">New
+        Tab</a>
+    <a href="path/to/your/file.pdf" download>Download
+        PDF</a>
+    <a href="#section1">Jump to section</a>
+    <a href="mailto:test@gmail.com">Send Email</a>
+    <a href="tel:+911234567890">Call</a>
+
+    <!-- <img> — Image Tag -->
+    <img src="https://i.pinimg.com/736x/8a/c7/c0/8ac7c06c4ba671f2b668947239945231.jpg" alt="Profile Photo"
+        height="500px" width="250px">
+
+    <!-- <audio> — Audio Tag -->
+    <audio controls>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- <video> — Video Tag -->
+    <video controls width="400px">
+        <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+    </video>
+
+    <!-- <source> — Media Source Tag -->
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+        <source src="video.webm" type="video/webm">
+    </video>
+
+    <!-- <iframe> — Inline Frame -->
+    <iframe src="https://assets.pinterest.com/ext/embed.html?id=1063271793293233653" height="445" width="345"
+        frameborder="0" scrolling="no"></iframe>
+
+    <!-- <picture> — Responsive Images -->
+    <picture>
+        <source media="(max-width: 600px)"
+        srcset="https://i.pinimg.com/1200x/6c/24/b3/6c24b32bc2002f43a6637a93d6942bd5.jpg">
+        <img src="https://i.pinimg.com/736x/d5/77/aa/d577aade4f0fe046965b9e02449a612f.jpg" alt="Responsive image">
+    </picture>
+
+    <!-- <track> — Subtitle / Caption -->
+    <video controls>
+        <source src="movie.mp4">
+        <track src="subtitles.vtt" kind="subtitles" srclang="en">
+    </video>
+
+</body>
+
+</html>
