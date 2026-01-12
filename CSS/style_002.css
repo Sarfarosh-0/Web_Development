@@ -1,0 +1,24 @@
+/* Universal Selector */
+*{
+    margin: 20;
+    padding: 20;
+    background-color: yellowgreen;
+}
+
+/* Element Selector */
+p{
+    color: bule;
+    background-color: aqua;
+}
+
+/* Class Selector */
+.para{
+    color: gray;
+    background-color: yellow;
+}
+
+/* ID Selector */
+#para{
+    color: red;
+    background-color: orange;
+}
