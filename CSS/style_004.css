@@ -1,0 +1,30 @@
+/* Combinator Selectors */
+
+    /* Descendant Selector (Space) */
+    div p {
+        background-color: skyblue;
+        text-align: start;
+        color: white;
+    }
+
+    /* Child Selector (>) */
+    ul>li {
+        background-color: yellow;
+        color: red;
+        text-decoration: none;
+    }
+
+    /* Adjacent Sibling Selector (+) */
+    h1+p {
+        color: black;
+        background-color: greenyellow;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    /* General Sibling Selector (~) */
+    h1~span {
+        color: blue;
+        background-color: aqua;
+        text-decoration: double;
+    }
