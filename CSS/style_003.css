@@ -1,0 +1,8 @@
+/* Grouping Selectors */
+
+h1,h2,p {
+    color: whitesmoke;
+    background-color: lightgreen;
+    text-align: center;
+    border: 1px solid black;
+}
