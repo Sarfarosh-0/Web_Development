@@ -1,0 +1,35 @@
+/* Attribute Selectors */
+
+    /* Basic Attribute Selector */
+    input[type="text"] {
+        background-color: bisque;
+        border: 2px ridge black;
+    }
+
+    /* Attribute Contains Value */
+    a[href*="google"]{
+        text-decoration: none;
+        color: blueviolet;
+        border: 1px solid black;
+        background-color: skyblue;
+        padding: 10px;
+    }
+
+    ul li{
+        margin: 10px;
+    }
+
+    /* Starts With */
+    a[href^="www"]{
+        margin: 10px;
+        background-color: greenyellow;
+        color:black;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    /* Ends With */
+    img[alt$="bond"]{
+        border: 2px solid black;
+        border-radius: 5px;
+    }
