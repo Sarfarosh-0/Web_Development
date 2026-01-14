@@ -1,0 +1,62 @@
+ /* Pseudo-class Selectors */
+
+
+ /* Common Pseudo-classes */
+
+    /* :hover ( Mouse Over ) */
+    a:hover {
+        font-weight: bolder;
+        background-color: skyblue;
+    }
+
+    /* :active ( Click ) */
+    h1:active {
+        background-color: red;
+    }
+
+    /* :focus ( Input Selected ) */
+    p:focus {
+        background-color: aqua;
+    }
+
+    legend {
+        text-align: center;
+    }
+
+    fieldset {
+        text-align: center;
+        border: 2px solid black;
+        margin: 20px;
+    }
+
+    /* :visited ( Link visited ) */
+    a {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    a:visited {
+        text-decoration: wavy;
+        background-color: blueviolet;
+        font-size: larger;
+    }
+
+    input[type="checkbox"]:checked + label {
+        background-color: chartreuse;
+    }
+
+
+
+
+ /* Structural Pseudo-classes */
+    li:first-child {
+        background-color: red;
+    }
+
+    li:nth-child(3) {
+        background-color: blueviolet;
+    }
+
+    li:last-child {
+        background-color: chartreuse;
+    }
