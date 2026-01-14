@@ -1,0 +1,30 @@
+/* Pseudo-element Selectors */
+
+    /* :before ( Content before ) */
+    .para::before {
+        content: "Welcome";
+        background-color: aqua;
+        font-weight: bolder;
+    }
+
+    /* :after ( Content after ) */
+    .para::after {
+        content: "Thankyou";
+        background-color: chartreuse;
+        font-weight: bolder;
+    }
+
+    /* :first-letter ( First Letter ) */
+    .para1::first-letter {
+        font-weight: bolder;
+        background-color: red;
+        color: whitesmoke;
+
+    }
+
+    /* :first-line ( First Line ) */
+    .text::first-line {
+        font-weight: bolder;
+        background-color: blueviolet;
+        color: whitesmoke;
+    }
