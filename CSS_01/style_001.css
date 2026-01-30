@@ -1,0 +1,38 @@
+* {
+    text-align: center;
+    margin: 10px;
+}
+
+div {
+    border: 2px solid black;
+}
+
+#Ex_01 {
+    color: red;
+    background-color: yellow;
+}
+
+#Ex_02 {
+    color: rgb(8, 240, 147);
+    background-color: rgb(26, 123, 188);
+}
+
+#Ex_03 {
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+#Ex_04 {
+    color: #690234;
+    background-color: #d33e61;
+}
+
+#Ex_05 {
+    color: hsl(142, 97%, 50%);
+    background-color: hsl(141, 81%, 83%);
+}
+
+#Ex_06 {
+    color: hsla(295, 91%, 46%, 0.9);
+    background-color: hsla(290, 56%, 61%, 0.1);
+}
