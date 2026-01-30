@@ -1,0 +1,34 @@
+/* Common CSS Color Properties */
+
+/* color (Text color) */
+#para1 {
+    color: blueviolet;
+}
+
+/* background-color (Background color) */
+#para2 {
+    background-color: chartreuse;
+}
+
+/* border-color (Border color) */
+#para3 {
+    border: 10px solid;
+    border-color: blue;
+}
+
+/* outline-color (Outline color) */
+#para4 {
+    outline: 10px solid;
+    outline-color: crimson;
+}
+
+/* box-shadow (Shadow color) */
+#para5 {
+    box-shadow: 5px 5px 5px greenyellow;
+}
+
+/* text-shadow (Text shadow color) */
+#para6 {
+    color: deeppink;
+    text-shadow: 3px 3px 3px;
+}
