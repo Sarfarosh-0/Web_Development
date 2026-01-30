@@ -1,0 +1,39 @@
+#para1 {
+    font-family: cursive;
+}
+
+#para2 {
+    font-size: 20px;
+}
+
+#para3 {
+    font-weight: 700;
+}
+
+#para4 {
+    font-style: oblique;
+}
+
+#para5 {
+    font-variant: small-caps;
+}
+
+#para6 {
+    line-height: 2;
+}
+
+#para7 {
+    letter-spacing: 3px;
+}
+
+#para8 {
+    word-spacing: 10px;
+}
+
+#para9 {
+    text-transform: uppercase;
+}
+
+#para10 {
+    font-size-adjust: 0.5;
+}
