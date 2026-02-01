@@ -1,0 +1,48 @@
+#ex1 {
+    color: blueviolet;
+    text-align: center;
+}
+
+ul li a {
+    text-decoration: none;
+    padding: 20px;
+    color: deeppink;
+    font-weight: bolder;
+}
+
+#ex2 {
+    color: chartreuse;
+    text-shadow: 3px 3px 3px;
+}
+
+#ex3 {
+    white-space: nowrap;
+}
+
+#ex {
+    height: 350px;
+    width: 400px;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: turquoise;
+    padding: 5px;
+    overflow: scroll;
+    text-overflow: ellipsis;
+}
+
+div {
+    height: 350px;
+    width: 400px;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    overflow-wrap: break-word;
+}
+
+#ex5 {
+    direction: rtl;
+}
+
+#ex6 {
+    writing-mode: vertical-lr;
+}
