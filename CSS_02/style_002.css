@@ -1,0 +1,43 @@
+div {
+    height: 300px;
+    width: 700px;
+    border: 2px solid black;
+    margin: 20px;
+    text-align: center;
+}
+
+.static {
+    position: static;
+    background-color: bisque;
+}
+
+.relative {
+    position: relative;
+    left: 100px;
+    background-color: beige;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: chartreuse;
+}
+
+.ex {
+    position: relative;
+    background-color: aqua;
+}
+
+.abosulte {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    background-color: aquamarine;
+}
+
+.sticky {
+    position: sticky;
+    bottom: 50px;
+    background-color: dodgerblue;
+}
