@@ -1,0 +1,87 @@
+#ex {
+    background-color: whitesmoke;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 50px;
+    gap: 10px;
+}
+
+#span {
+    display: block;
+    width: 50%;
+    padding: 20px;
+    background-color: bisque;
+    text-align: center;
+}
+
+#a1 {
+    display: inline;
+    padding: 20px;
+    background-color: beige;
+}
+
+#a2 {
+    display: inline-block;
+    width: 120px;
+    height: 60px;
+    padding: 20px;
+    background: coral;
+}
+
+#a3 {
+    display: none;
+    background-color: blueviolet;
+}
+
+#a4 {
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 50px;
+    gap: 10px;
+}
+
+img {
+    width: 600px;
+    height: 340px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#a5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    background-color: whitesmoke;
+    padding: 50px;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#a5 img {
+    width: 350px;
+    height: 220px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#a6 {
+    display: table;
+    padding: 30px;
+    background-color: rgb(213, 212, 213);
+    border: 2px solid black;
+    margin-top: 10px;
+}
+
+.head {
+    display: table-row;
+}
+
+.cell {
+    display: table-row;
+}
