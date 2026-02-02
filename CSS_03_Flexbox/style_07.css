@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: rgb(225, 117, 117);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+img {
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
