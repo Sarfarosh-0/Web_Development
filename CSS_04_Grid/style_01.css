@@ -1,0 +1,32 @@
+* {
+    text-align: center;
+}
+
+div {
+    background-color: aliceblue;
+    border: 2px solid black;
+    padding: 50px;
+}
+
+.container1 {
+    display: grid;
+    background-color: blueviolet;
+    grid-template-columns: auto;
+    padding: 20px;
+    gap: 5px;
+}
+
+.container1 div {
+    background-color: aliceblue;
+    border: 2px solid black;
+    padding: 50px;
+    width: 100px;
+}
+
+.container2 {
+    display: grid;
+    background-color: blueviolet;
+    grid-template-rows: auto;
+    padding: 20px;
+    gap: 5px;
+}
