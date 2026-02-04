@@ -1,0 +1,75 @@
+body {
+    background-color: thistle;
+}
+
+div {
+    border-radius: 5px;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    background-color: pink;
+}
+
+#px-unit {
+    font-size: 16px;
+}
+
+#cm-unit {
+    font-size: 0.6cm;
+}
+
+#mm-unit {
+    font-size: 6mm;
+}
+
+#in-unit {
+    font-size: 0.25in;
+}
+
+#pt-unit {
+    font-size: 12pt;
+}
+
+#pc-unit {
+    font-size: 1pc;
+}
+
+#em-unit {
+    font-size: 1em;
+}
+
+#ex-unit {
+    font-size: 1ex;
+}
+
+#ch-unit {
+    font-size: 1ch;
+}
+
+#fr-unit {
+    font-size: 1fr;
+}
+
+#rem-unit {
+    font-size: 1rem;
+}
+
+#vw-unit {
+    font-size: 1vw;
+}
+
+#vh-unit {
+    font-size: 1vh;
+}
+
+#vmin-unit {
+    font-size: 1vmin;
+}
+
+#vmax-unit {
+    font-size: 1vmax;
+}
+
+#percent-unit {
+    font-size: 100%;
+}
