@@ -1,0 +1,109 @@
+* {
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+h1,
+h2 {
+    background-color: orange;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.container {
+    background-color: dodgerblue;
+    padding: 10px;
+    gap: 10px;
+    display: grid;
+    height: 400px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 100px 100px 100px;
+}
+
+.container div,
+.container-vertical div {
+    background-color: #f1f1f1;
+}
+
+.a1 {
+    justify-self: auto;
+    width: 100px;
+}
+
+.b2 {
+    justify-self: normal;
+    width: 100px;
+}
+
+.c3 {
+    justify-self: stretch;
+    width: 100px;
+}
+
+.d4 {
+    justify-self: start;
+    width: 100px;
+}
+
+.e5 {
+    justify-self: end;
+    width: 100px;
+}
+
+.f6 {
+    justify-self: center;
+    width: 100px;
+}
+
+.g7 {
+    justify-self: left;
+    width: 100px;
+}
+
+.h1 {
+    justify-self: right;
+    width: 100px;
+}
+
+.container-vertical {
+    background-color: dodgerblue;
+    padding: 10px;
+    gap: 10px;
+    display: grid;
+    height: 400px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 100px 100px 100px;
+}
+
+.a1v {
+    align-self: auto;
+    height: 50px;
+}
+
+.b2v {
+    align-self: normal;
+    height: 50px;
+}
+
+.c3v {
+    align-self: stretch;
+    height: 50px;
+}
+
+.d4v {
+    align-self: start;
+    height: 50px;
+}
+
+.e5v {
+    align-self: end;
+    height: 50px;
+}
+
+.f6v {
+    align-self: center;
+    height: 50px;
+}
