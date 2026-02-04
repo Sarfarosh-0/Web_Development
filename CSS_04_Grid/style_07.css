@@ -1,0 +1,50 @@
+* {
+    padding: 10px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 5px;
+}
+h1 {
+    background-color: blueviolet;
+    border: 2px solid black;
+}
+
+
+.container {
+    background-color: dodgerblue;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    border: 2px solid black;
+
+}
+
+.item-1 {
+    order: 2;
+    background-color: tomato;
+}
+
+.item-2 {
+    order: 3;
+    background-color: gold;
+}
+
+.item-3 {
+    order: 1;
+    background-color: mediumseagreen;
+}
+
+.item-4 {
+    order: 5;
+    background-color: orchid;
+}
+
+.item-5 {
+    order: 4;
+    background-color: coral;
+}
+
+.item-6 {
+    order: 6;
+    background-color: lightblue;
+}
