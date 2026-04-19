@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of JavaScript</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        button {
+            height: 30px;
+            background-color: rgb(202, 236, 167);
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- inline Javascpirt -->
+    <button onclick="alert('This is DONE by using Inline Javascpirt')">Inline Javascpirt</button>
+
+    <!-- Internal Javascpirt -->
+    <button onclick="Internal()">Internal Javascpirt</button>
+
+    <!-- External Javascpirt -->
+    <button onclick="External()">External Javascpirt</button>
+
+    <script>
+        function Internal() {
+            alert("This is DONE by using Internal Javascpirt")
+        }
+    </script>
+
+    <script src="script_001.js"></script>
+
+</body>
+
+</html>
