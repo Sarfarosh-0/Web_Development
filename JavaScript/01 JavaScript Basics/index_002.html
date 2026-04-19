@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Variables and Datatypes</title>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Check Your Browsers Console</h2>
+
+    <script>
+
+        // varilabes
+        let a = 10;
+        let b = 20;
+        console.log(a + b);
+
+        var a1 = 20;
+        var b1 = 10;
+        console.log(a1 - b1);
+
+        const a2 = 35;
+        const b2 = 5;
+        console.log(a2 / b2);
+
+        // DataTypes
+
+        // String
+        let name = 'Ironman'
+        let real_name = "Robert Dowery Jr"
+        console.log(typeof (name))
+        console.log(typeof (real_name))
+
+        // Number
+        let num = 1000;
+        let num_1 = 3.14;
+        console.log(typeof (num));
+        console.log(typeof (num_1));
+
+        // Bigint
+        let num_2 = BigInt(273451764859372023339845291234518353);
+        console.log(typeof (num_2));
+
+        // Boolean
+        let Yes = true;
+        let No = false;
+        console.log(typeof (Yes));
+        console.log(typeof (No));
+
+        // Object 
+        let person = {
+            name: "Sarfarosh",
+            age: 20,
+            city: "Lucknow"
+        }
+        console.log(typeof (person));
+
+        // Undefined 
+        let un;
+        console.log(typeof (un));
+
+        // Null 
+        let y = null;
+        console.log(typeof (y));
+
+        // Symbol
+        const x = Symbol();
+        console.log(typeof (x));
+
+    </script>
+</body>
+
+</html>
