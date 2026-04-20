@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops</title>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Check Your Browsers Console</h2>
+
+    <script>
+        
+        // For Loop
+        console.log("Table of 5 Using For Loop")
+        for (let i = 1; i <= 10; i++) {
+            console.log('5' + ' X ' + i + ' = ' + i * 5);
+        }
+
+        // while Loop
+        let j = 1;
+        console.log("Table of 21 Using While Loop")
+        while (j <= 10) {
+            console.log('21' + ' X ' + j + ' = ' + j * 21);
+            j++;
+        }
+
+        // do while loop
+        console.log("Table of 25 Using Do While Loop")
+        let k = 1;
+        do {
+            console.log('25' + ' X ' + k + ' = ' + k * 25);
+            k++;
+        } while (k <= 10);
+
+        // break statement
+        for (let i = 0; i < 30; i++) {
+            if (i == 21) {
+                console.log('Today is Her Birthday');
+                break;
+            }
+            else {
+                console.log('Normal Day')
+            }
+        }
+
+        // Continue Statement
+        for (let i = 0; i < 30; i++) {
+            if (i == 25) {
+                continue;
+            }
+            else {
+                console.log('Normal Day')
+            }
+        }
+
+    </script>
+</body>
+
+</html>
