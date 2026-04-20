@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        button {
+            height: 30px;
+            background-color: rgb(202, 236, 167);
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Check Your Browsers Console</h2>
+
+    <script>
+        // Normal Function 
+        function Greet() {
+            console.log("Welcome");
+        }
+        Greet();
+
+        function multiply(a, b) {
+            return a * b;
+        }
+        let result = multiply(4, 5);
+        console.log(result);
+
+        // Function Expression
+        const multi = function (a, b) {
+            return a * b;
+        };
+        console.log(multi(5, 7));
+
+        // Arrow Function
+        console.log('Before Arrow Function');
+        function Normal_add(a, b) {
+            return a + b;
+        }
+        console.log(Normal_add(60, 70));
+
+        console.log('After Arrow Function')
+        const Arrow_add = (a, b) => a + b;
+        console.log(Arrow_add(60, 70));
+    </script>
+
+
+</body>
+
+</html>
