@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Conditionals</title>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Check Your Browsers Console</h2>
+
+    <script>
+        // if...else if...else 
+
+        let age = 30;
+        if (age > 18) {
+            console.log('Your are eligible')
+        }
+        else if (age == 18) {
+            console.log('You Need to Wait 1 more Year')
+        }
+        else {
+            console.log('Sorry you are not eligible')
+        }
+
+        //  switch Statement
+        let day = new Date();
+        const today = day.getDay();
+        console.log(today)
+        switch (today) {
+            case 7:
+                console.log("It's the weekend!");
+                break;
+            case 1:
+                console.log('Today is Monday');
+                break;
+            case 2:
+                console.log('Today is Tuesday');
+                break;
+            case 3:
+                console.log('Today is Wednesday');
+                break;
+            case 4:
+                console.log('Today is Thrusday');
+                break;
+            case 5:
+                console.log('Today is Friday');
+                break;
+            case 6:
+                console.log('Today is saturday');
+                break;
+            default:
+                console.log("Sorry We don't have data for this Day")
+        }
+
+        // Ternary Operator (? :)
+        let light = Math.round(Math.random());
+        console.log(light);
+        (light == 1) ? console.log('Lights are ON') : console.log('Lights are OFF');
+
+
+    </script>
+</body>
+
+</html>
