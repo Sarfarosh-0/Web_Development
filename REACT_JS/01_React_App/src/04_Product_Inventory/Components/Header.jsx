@@ -1,14 +1,17 @@
 function Header({ totalProduct }) {
     return (
-        <header className="flex justify-between items-center border-b border-slate-300 w-full">
-            <div>
-                <h1 className="text-5xl font-bold">Product Inventory</h1>
-                <p className="text-slate-500 mt-2">
-                    Manage and view all available products in your inventory.
-                </p>
+        <header className="flex justify-between items-center border-b border-slate-300 w-full px-4 py-2 shadow-xl">
+            <div className="flex gap-4 items-center">
+                <span className="text-4xl">👜</span>
+                <div>
+                    <h1 className="text-2xl font-bold">Product Inventory</h1>
+                    <p className="text-slate-500 ">
+                        Manage and view all available products in your inventory.
+                    </p>
+                </div>
             </div>
 
-            <div className="bg-indigo-200 rounded-xl px-6 py-2 flex m-2 items-center gap-4">
+            <div className="bg-indigo-200 rounded-xl px-6 py-2 flex items-center gap-4">
                 <span className="text-5xl">📦</span>
                 <div>
                     <p className="text-slate-500 text-sm font-semibold">Total Products</p>
