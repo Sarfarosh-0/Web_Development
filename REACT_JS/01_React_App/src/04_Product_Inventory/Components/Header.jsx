@@ -1,6 +1,6 @@
 function Header({ totalProduct }) {
     return (
-        <header className="flex justify-between items-center border-b border-slate-300 w-full px-4 py-2 shadow-xl">
+        <header className="flex justify-between items-center border-b bg-white border-slate-300 w-full px-4 py-2 shadow-xl sticky top-0 z-10">
             <div className="flex gap-4 items-center">
                 <span className="text-4xl">👜</span>
                 <div>
@@ -11,7 +11,7 @@ function Header({ totalProduct }) {
                 </div>
             </div>
 
-            <div className="bg-indigo-200 rounded-xl px-6 py-2 flex items-center gap-4">
+            <div className="bg-indigo-200 rounded-xl px-4 py-1 flex items-center gap-4">
                 <span className="text-5xl">📦</span>
                 <div>
                     <p className="text-slate-500 text-sm font-semibold">Total Products</p>

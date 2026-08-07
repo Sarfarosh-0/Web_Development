@@ -1,6 +1,6 @@
 function ProductCard() {
     return (
-        <div className="bg-white m-2 p-3 w-fit rounded-lg shadow-md border border-slate-200 hover:scale-105 transition-all duration-500 ease-in-out">
+        <div className="bg-white p-3 w-fit rounded-lg shadow-md border border-slate-200 hover:scale-105 transition-all duration-500 ease-in-out">
             <img src="https://placehold.co/250x150" alt="Product" className="object-cover rounded-lg" />
 
             <div>
