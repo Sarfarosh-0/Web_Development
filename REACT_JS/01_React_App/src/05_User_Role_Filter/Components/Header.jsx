@@ -1,6 +1,6 @@
 function Header({ totalProduct }) {
     return (
-        <header className="flex justify-between items-center border-b bg-slate-900 border-slate-800 text-slate-100 w-full px-4 py-2 shadow-xl sticky top-0 z-10">
+        <header className="flex justify-between items-center bg-slate-900 text-slate-100 w-full px-4 py-2 sticky top-0 z-10">
             <div className="flex gap-4 items-center">
                 <span className="text-4xl">🫂</span>
                 <div>
