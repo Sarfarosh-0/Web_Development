@@ -197,7 +197,7 @@ const users = [
   },
   {
     id: 29,
-    name: "Sebastian Campbell",
+    name: "Sebastian bell",
     role: "Developer",
     image: "https://i.pravatar.cc/150?img=57",
     status: true,

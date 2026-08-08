@@ -1,15 +1,16 @@
 function UserCard({ image, name, status, role }) {
     return (
-
         <div className="bg-slate-900 p-5 w-56 rounded-xl shadow-xl border border-slate-800 flex flex-col items-center gap-3 relative">
-
             <div className="relative">
-                <span className={`absolute top-1 left-32 w-4 h-4  border-2 border-slate-900 rounded-full ${status ? "bg-emerald-500" : "bg-rose-500"}`}></span>
                 <img
                     src={image}
                     alt={name}
                     className="w-28 h-28 rounded-full border-2 border-slate-700 object-cover"
                 />
+                <span
+                    className={`absolute bottom-1 right-1 w-4 h-4 border-2 border-slate-900 rounded-full ${status ? "bg-emerald-500" : "bg-rose-500"
+                        }`}
+                ></span>
             </div>
 
             <div className="text-center">
