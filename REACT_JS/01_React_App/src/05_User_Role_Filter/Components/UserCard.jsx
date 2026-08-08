@@ -1,21 +1,20 @@
-function UserCard() {
+function UserCard({ image, name, status, role }) {
     return (
 
         <div className="bg-slate-900 p-5 w-56 rounded-xl shadow-xl border border-slate-800 flex flex-col items-center gap-3 relative">
 
             <div className="relative">
-                <span className="absolute top-1 left-32 w-4 h-4 bg-emerald-500 border-2 border-slate-900 rounded-full"></span>
-
+                <span className={`absolute top-1 left-32 w-4 h-4  border-2 border-slate-900 rounded-full ${status ? "bg-emerald-500" : "bg-rose-500"}`}></span>
                 <img
-                    src="https://placehold.co/150x150"
-                    alt="Sarah Johnson"
-                    className="w-28 h-28 object-cover rounded-full border-2 border-slate-700"
-                    />
+                    src={image}
+                    alt={name}
+                    className="w-28 h-28 rounded-full border-2 border-slate-700 object-cover"
+                />
             </div>
 
             <div className="text-center">
-                <h2 className="text-xl font-bold text-white">Sarah Johnson</h2>
-                <p className="text-indigo-400 text-sm font-semibold mt-0.5">Admin</p>
+                <h2 className="text-xl font-bold text-white">{name}</h2>
+                <p className="text-indigo-400 text-sm font-semibold mt-0.5">{role}</p>
             </div>
 
             <div className="socials flex justify-center gap-4 mt-1">
