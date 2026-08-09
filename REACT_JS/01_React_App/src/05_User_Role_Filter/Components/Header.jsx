@@ -1,4 +1,7 @@
-function Header({ totalProduct }) {
+import Navbar from "./Navbar";
+import { useState } from "react";
+
+function Header({ totalUsers, category, setCategory }) {
     return (
         <header className="flex justify-between items-center bg-slate-900 text-slate-100 w-full px-4 py-2 sticky top-0 z-10">
             <div className="flex gap-4 items-center">
@@ -10,11 +13,16 @@ function Header({ totalProduct }) {
                     </p>
                 </div>
             </div>
+            
+            <Navbar
+                category={category}
+                setCategory={setCategory}
+            />
 
             <div className="bg-slate-800 border border-slate-700 rounded-xl px-4 py-1 flex items-center gap-4">
                 <span className="text-5xl">👥</span>
                 <div>
-                    <h2 className="text-3xl font-bold text-indigo-400">{totalProduct}</h2>
+                    <h2 className="text-3xl font-bold text-indigo-400">{totalUsers}</h2>
                     <p className="text-slate-400 text-sm font-semibold">Total Members</p>
                 </div>
             </div>
