@@ -1,6 +1,18 @@
-function FAQ() {
+import { useState } from "react";
+
+function FAQ({ question, answer }) {
+
+    const [openClose, setOpenClose] = useState(false);
+
     return (
-        <h1>Hello World</h1>
+        <>
+            <h1 onClick={() => {
+                setOpenClose(true)
+            }}>
+                {question}
+            </h1>
+            <p>{answer}</p>
+        </>
     )
 }
 
