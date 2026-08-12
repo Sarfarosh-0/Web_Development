@@ -7,7 +7,10 @@ import '../../src/index.css'
 
 createRoot(document.getElementById("root")).render(
     <strictMode>
-        <div  className="flex flex-col justify-center items-center m-10">
+        <div  className="flex flex-col justify-center items-center gap-2 m-10">
+            <FAQ question={"What is REACT ?"} answer={"REACT is a JAVASCRIPT Libray"} />
+            <FAQ question={"What is REACT ?"} answer={"REACT is a JAVASCRIPT Libray"} />
+            <FAQ question={"What is REACT ?"} answer={"REACT is a JAVASCRIPT Libray"} />
             <FAQ question={"What is REACT ?"} answer={"REACT is a JAVASCRIPT Libray"} />
         </div>
     </strictMode>
