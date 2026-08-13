@@ -4,7 +4,6 @@ import FAQ from "./FAQ.jsx";
 
 import '../../src/index.css'
 
-
 createRoot(document.getElementById("root")).render(
     <strictMode>
         <div  className="flex flex-col justify-center items-center gap-2 m-10">
