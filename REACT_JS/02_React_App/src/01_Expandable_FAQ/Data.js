@@ -60,3 +60,5 @@ const FAQS = [
       "Git is a version control system used to track changes in code, collaborate with other developers, and manage different versions of a project.",
   },
 ];
+
+export default FAQS;
