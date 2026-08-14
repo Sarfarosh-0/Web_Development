@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 function Form() {
+
+    const [name, setName] = useState("");
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-slate-100 p-5">
             <div className="w-full max-w-2xl rounded-2xl border border-slate-200 bg-white p-8 shadow-2xl">
@@ -32,6 +37,12 @@ function Form() {
                         name="userName"
                         id="userName"
                         placeholder="Enter your name..."
+                        value={name}
+                        onChange={(e) => {
+                            console.log(e.target.value);
+                            setName(e.target.value);
+                        }}
+
                         className="mt-3 w-full rounded-lg border border-slate-300 px-5 py-3 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-200"
                     />
                 </form>
@@ -43,11 +54,7 @@ function Form() {
                     </span>
 
                     <h2 className="text-2xl font-bold text-slate-800 md:text-4xl">
-                        Hello,{" "}
-                        <span className="text-indigo-500">
-                            Friend
-                        </span>{" "}
-                        !
+                        Hello, <span className="text-indigo-500">{name || "Friend"}</span>!
                     </h2>
                 </div>
 
@@ -55,6 +62,9 @@ function Form() {
                 <div className="mt-6 flex justify-center">
                     <button
                         type="button"
+                        onClick={() => {
+                            setName("")
+                        }}
                         className="flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-2.5 text-lg font-bold text-slate-700 transition hover:bg-slate-100"
                     >
                         <span>🗑️</span>
