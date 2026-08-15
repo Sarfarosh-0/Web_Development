@@ -20,6 +20,9 @@ function ItemContainer() {
                 <Item />
                 <Item />
                 <Item />
+                <Item />
+                <Item />
+                <Item />
             </div>
 
             {/* Footer Action */}

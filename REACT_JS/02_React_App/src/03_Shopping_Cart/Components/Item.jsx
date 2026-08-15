@@ -1,6 +1,6 @@
 function Item() {
     return (
-        <div className="itemCard py-2 px-4 bg-white w-full flex justify-center gap-10 items-center rounded-xl border border-gray-200 shadow-xl">
+        <div className="itemCard py-2 px-4 bg-white w-full flex justify-center gap-10 items-center border-b border-slate-300">
 
             {/* Product Image */}
             <img
