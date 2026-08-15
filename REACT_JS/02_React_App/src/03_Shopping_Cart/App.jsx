@@ -1,10 +1,11 @@
 import Header from "./Components/Header";
-import Item from "./Components/Item";
+import ItemContainer from "./Components/ItemContainer";
 
 function App() {
     return (
         <>
             <Header />
+            <ItemContainer />
         </>
     )
 }
