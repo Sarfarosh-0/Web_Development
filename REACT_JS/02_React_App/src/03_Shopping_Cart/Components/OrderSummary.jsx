@@ -1,6 +1,6 @@
 function OrderSummary() {
     return (
-        <section className="OrderSummary border border-slate-200 bg-white shadow-sm rounded-2xl p-5 my-4 mx-3 flex flex-col gap-2 flex-1">
+        <section className="OrderSummary border border-slate-200 bg-white shadow-sm rounded-2xl p-5 my-4 mx-3 flex flex-col gap-2 flex-1 h-full">
             <div className="Header flex gap-3 items-center justify-center mb-3">
                 <div className="bg-violet-100 p-3 rounded-xl">
                     <svg className="w-6 h-6 text-violet-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -45,7 +45,7 @@ function OrderSummary() {
                 <span>Proceed to Checkout</span>
             </button>
 
-            <div className="flex flex-col gap-2 m-auto ">
+            <div className="flex flex-col gap-2 mt-auto">
 
                 <div className="flex gap-2.5 items-center font-semibold text-sm text-slate-500">
                     <svg className="w-5 h-5 text-violet-500 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">

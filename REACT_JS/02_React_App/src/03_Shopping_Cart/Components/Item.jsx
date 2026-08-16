@@ -32,7 +32,7 @@ function Item() {
                     </svg>
                 </button>
 
-                <span className="text-sm min-w-[1rem] text-center select-none font-semibold text-slate-900">1</span>
+                <span className="text-sm min-w-4 text-center select-none font-semibold text-slate-900">1</span>
 
                 <button
                     type="button"
