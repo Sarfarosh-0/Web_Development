@@ -45,7 +45,8 @@ function OrderSummary() {
                 <span>Proceed to Checkout</span>
             </button>
 
-            <div className="flex flex-col gap-2 pt-2 border-t border-slate-100">
+            <div className="flex flex-col gap-2 m-auto pt-2 border-t border-slate-100">
+                
                 <div className="flex gap-2.5 items-center font-semibold text-sm text-slate-500">
                     <svg className="w-5 h-5 text-violet-500 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751A11.959 11.959 0 0 1 12 2.714Z" />
