@@ -2,15 +2,16 @@ import Item from "./Item";
 
 function ItemContainer() {
     return (
-        <section className="m-5 p-2 bg-white border border-gray-200 rounded-xl w-full max-w-4xl shadow-sm flex flex-col">
+        <section className="m-5 p-2 bg-white border border-gray-200 rounded-xl w-full max-w-3xl shadow-sm flex flex-col">
 
             {/* Table Headers */}
-            <div className="border-gray-200 text-sm font-bold text-black uppercase bg-gray-50 border-b grid grid-cols-6 items-center gap-4 py-3 px-6 ">
+            <div className="border-gray-200 text-sm font-bold text-black uppercase bg-gray-50 border-b py-2 px-4 w-full grid grid-cols-8 gap-5 items-center">
+                
                 <span className="col-span-1">Item</span>
-                <span className="col-span-3"></span>
-                <span className="col-span-2 text-center">Price</span>
+                <span className="col-span-2"></span>
+                <span className="col-span-1 text-center">Price</span>
                 <span className="col-span-2 text-center">Quantity</span>
-                <span className="col-span-2 text-center">Total</span>
+                <span className="col-span-1 text-center">Total</span>
                 <span className="col-span-1 text-right"></span>
             </div>
 

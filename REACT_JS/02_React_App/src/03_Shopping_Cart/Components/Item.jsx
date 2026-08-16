@@ -9,7 +9,7 @@ function Item() {
             />
 
             {/* Product Name & Category */}
-            <div className="itemsDetails flex flex-col col-span-3">
+            <div className="itemsDetails flex flex-col col-span-2">
                 <h1 className="font-semibold text-gray-900 text-base p-0.5">Hoodie</h1>
                 <h2 className="text-sm text-violet-700"><span className="bg-violet-100 rounded-2xl py-0.5 px-2">Clothing</span></h2>
             </div>
@@ -18,7 +18,7 @@ function Item() {
             <h1 className="Price font-semibold text-gray-600 col-span-1 text-base">$39.99</h1>
 
             {/* Product Quantity */}
-            <div className="col-span-1 quantity px-2 py-1 flex items-center gap-3 bg-gray-100/80 rounded-lg border border-gray-200 text-gray-800 font-medium shadow-inner">
+            <div className="col-span-2 quantity px-2 py-1 flex items-center gap-3 bg-gray-100/80 rounded-lg border border-gray-200 text-gray-800 font-medium shadow-inner">
 
                 {/* Minus SVG Button */}
                 <button
