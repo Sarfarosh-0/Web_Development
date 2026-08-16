@@ -16,7 +16,7 @@ function ItemContainer() {
             </div>
 
             {/* Scrollable Item List */}
-            <div className="overflow-auto scrollbar-thin max-h-[550px] flex flex-col ">
+            <div className="overflow-auto scrollbar-thin max-h-135 flex flex-col ">
                 <Item />
                 <Item />
                 <Item />
