@@ -1,6 +1,6 @@
 function Header({ totalItems }) {
     return (
-        <header className="flex justify-between items-center border border-slate-200 bg-white m-4 px-6 py-4 shadow-md sticky top-0 z-10 rounded-2xl">
+        <header className="flex justify-between items-center border border-slate-200 bg-white mt-4 mx-2 px-6 py-4 shadow-md sticky top-0 z-10 rounded-2xl">
 
             {/* Title */}
             <div className="flex gap-4 items-center">

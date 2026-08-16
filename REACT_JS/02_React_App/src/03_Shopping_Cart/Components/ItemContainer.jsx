@@ -2,7 +2,7 @@ import Item from "./Item";
 
 function ItemContainer() {
     return (
-        <section className="m-5 p-2 bg-white border border-gray-200 rounded-xl w-full max-w-3xl shadow-sm flex flex-col items-center">
+        <section className="mx-2 my-4 p-2 bg-white border border-gray-200 rounded-xl w-full max-w-3xl shadow-sm flex flex-col items-center">
 
             {/* Table Headers */}
             <div className="border-gray-200 text-sm font-bold text-black uppercase bg-gray-50 rounded-2xl border-b py-5 px-4 w-full grid grid-cols-8 gap-4 items-center">
@@ -17,13 +17,6 @@ function ItemContainer() {
 
             {/* Scrollable Item List */}
             <div className="overflow-auto scrollbar-thin max-h-135 flex flex-col ">
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
                 <Item />
                 <Item />
                 <Item />

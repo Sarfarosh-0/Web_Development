@@ -6,7 +6,7 @@ function App() {
     return (
         <>
             <Header />
-            <div className="flex justify-evenly items-center">
+            <div className="flex gap-10 items-center">
                 <ItemContainer />
                 <OrderSummary />
             </div>
