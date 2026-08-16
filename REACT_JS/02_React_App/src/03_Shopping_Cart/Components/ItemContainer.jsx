@@ -1,6 +1,8 @@
 import Item from "./Item";
+import items from "../Data/Data"
 
 function ItemContainer() {
+
     return (
         <section className="mx-3 my-4 p-5.5 bg-white border border-slate-200 rounded-2xl w-full max-w-3xl shadow-sm flex flex-col gap-4 h-full">
 
@@ -15,11 +17,18 @@ function ItemContainer() {
 
             {/* Scrollable Item List */}
             <div className="overflow-y-auto max-h-90 flex-1 flex flex-col gap-2 pr-1 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
+                {items.map((item) => {
+                    return (
+                        <Item
+                            key={item.id}
+                            image={item.image}
+                            name={item.name}
+                            category={item.category}
+                            quantity={item.quantity}
+                            price={item.price}
+                        />
+                    );
+                })}
             </div>
 
             {/* Footer Action */}

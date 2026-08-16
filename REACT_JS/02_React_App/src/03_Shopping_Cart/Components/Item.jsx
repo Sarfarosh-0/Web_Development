@@ -1,9 +1,9 @@
-function Item() {
+function Item({id,image,name,category,quantity,price}) {
     return (
         <div className="hover:bg-slate-50/80 bg-white border-b border-slate-300 py-3 px-4 w-full grid grid-cols-8 gap-4 items-center shadow-xs transition-colors">
             {/* Product Image */}
             <img
-                src="https://i.pinimg.com/736x/88/40/c3/8840c3a4db6fc894291dd9b578450244.jpg"
+                src={image}
                 alt="Hoodie"
                 draggable="false"
                 className="w-16 h-16 object-cover rounded-lg border border-slate-200 col-span-1 shrink-0"
@@ -11,14 +11,14 @@ function Item() {
 
             {/* Product Name & Category */}
             <div className="flex flex-col col-span-2 min-w-0">
-                <span className="font-semibold text-slate-900 text-base truncate">Hoodie</span>
+                <span className="font-semibold text-slate-900 text-base truncate">{name}</span>
                 <span className="mt-1 w-fit text-xs font-medium text-violet-700 bg-violet-100/70 px-2 py-0.5 rounded-full border border-violet-200/50">
-                    Clothing
+                    {category}
                 </span>
             </div>
 
             {/* Product Price */}
-            <span className="font-medium text-slate-600 col-span-1 text-sm">$39.99</span>
+            <span className="font-medium text-slate-600 col-span-1 text-sm">${price}</span>
 
             {/* Product Quantity */}
             <div className="col-span-2 justify-self-center inline-flex items-center gap-3 px-2 py-1 bg-slate-100/80 rounded-lg border border-slate-200 text-slate-800 font-medium">
@@ -32,7 +32,7 @@ function Item() {
                     </svg>
                 </button>
 
-                <span className="text-sm min-w-4 text-center select-none font-semibold text-slate-900">1</span>
+                <span className="text-sm min-w-4 text-center select-none font-semibold text-slate-900">{quantity}</span>
 
                 <button
                     type="button"
@@ -46,7 +46,7 @@ function Item() {
             </div>
 
             {/* Total */}
-            <span className="col-span-1 font-bold text-slate-900 text-base justify-self-end">$39.99</span>
+            <span className="col-span-1 font-bold text-slate-900 text-base justify-self-end">${price*quantity}</span>
 
             {/* Delete Button */}
             <button

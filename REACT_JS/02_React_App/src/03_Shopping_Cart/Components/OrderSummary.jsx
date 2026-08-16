@@ -45,7 +45,7 @@ function OrderSummary() {
                 <span>Proceed to Checkout</span>
             </button>
 
-            <div className="flex flex-col gap-2 mt-auto">
+            <div className="flex flex-col gap-2 mt-auto mx-auto">
 
                 <div className="flex gap-2.5 items-center font-semibold text-sm text-slate-500">
                     <svg className="w-5 h-5 text-violet-500 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
