@@ -1,5 +1,5 @@
 import Item from "./Item";
-import items from "../Data/Data"
+import items from "../Data/cartItems"
 
 function ItemContainer() {
 

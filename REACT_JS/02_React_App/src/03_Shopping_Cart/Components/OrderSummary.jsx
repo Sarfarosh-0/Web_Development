@@ -1,4 +1,15 @@
+import items from "../Data/cartItems"
+
 function OrderSummary() {
+
+    const totalPrice = items.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+    );
+    const deliveryCharges = 10;
+    const tax = Number(((totalPrice * 18) / 100).toFixed(2))
+    const grandTotal = totalPrice + tax + deliveryCharges;
+
     return (
         <section className="OrderSummary border border-slate-200 bg-white shadow-sm rounded-2xl p-5 my-4 mx-3 flex flex-col gap-2 flex-1 h-full">
             <div className="Header flex gap-3 items-center justify-center mb-3">
@@ -12,21 +23,21 @@ function OrderSummary() {
 
             <div className="bill flex flex-col gap-2">
                 <p className="flex justify-between p-1">
-                    <span className="font-semibold text-slate-500">• Subtotal (4 items)</span>
-                    <span className="font-bold">$269.95</span>
+                    <span className="font-semibold text-slate-500">• Subtotal ({items.length} Items)</span>
+                    <span className="font-bold">${totalPrice}</span>
                 </p>
                 <p className="flex justify-between p-1">
                     <span className="font-semibold text-slate-500">• Tax (18 %)</span>
-                    <span className="font-bold">$21.60</span>
+                    <span className="font-bold">${tax}</span>
                 </p>
                 <p className="flex justify-between border-b border-slate-300 p-1 pb-5">
                     <span className="font-semibold text-slate-500 ">• Delivery Charges</span>
-                    <span className="font-bold">$10.00</span>
+                    <span className="font-bold">${deliveryCharges.toFixed(2)}</span>
                 </p>
 
                 <p className="flex justify-between p-2">
                     <span className="font-bold text-xl text-slate-700">Grand Total</span>
-                    <span className="font-bold text-2xl text-violet-600">$301.55</span>
+                    <span className="font-bold text-2xl text-violet-600">${grandTotal.toFixed(2)}</span>
                 </p>
             </div>
 
