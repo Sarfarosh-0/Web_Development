@@ -6,7 +6,7 @@ function App() {
     return (
         <>
             <Header />
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-5 items-center select-none">
                 <ItemContainer />
                 <OrderSummary />
             </div>
