@@ -2,15 +2,16 @@ import Item from "./Item";
 
 function ItemContainer() {
     return (
-        <section className="p-6 m-5 bg-white border border-gray-200 rounded-xl w-full max-w-4xl shadow-sm flex flex-col gap-6">
+        <section className="m-5 p-2 bg-white border border-gray-200 rounded-xl w-full max-w-4xl shadow-sm flex flex-col">
 
             {/* Table Headers */}
-            <div className="Headings flex justify-between items-center px-4 font-semibold text-gray-500 text-sm border-b border-gray-100 pb-3">
-                <h1 className="w-56">Item</h1>
-                <h1 className="w-20 text-center">Price</h1>
-                <h1 className="w-28 text-center">Quantity</h1>
-                <h1 className="w-20 text-center">Total</h1>
-                <h1 className="w-10"></h1>
+            <div className="border-gray-200 text-sm font-bold text-black uppercase bg-gray-50 border-b grid grid-cols-6 items-center gap-4 py-3 px-6 ">
+                <span className="col-span-1">Item</span>
+                <span className="col-span-3"></span>
+                <span className="col-span-2 text-center">Price</span>
+                <span className="col-span-2 text-center">Quantity</span>
+                <span className="col-span-2 text-center">Total</span>
+                <span className="col-span-1 text-right"></span>
             </div>
 
             {/* Scrollable Item List */}
