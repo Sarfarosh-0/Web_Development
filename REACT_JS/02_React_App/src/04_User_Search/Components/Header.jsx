@@ -1,6 +1,6 @@
 function Header({ totalContacts }) {
     return (
-        <header className="flex justify-between items-center px-6 py-4 shadow-md sticky top-0 z-10 rounded-t-2xl">
+        <header className="flex justify-between items-center px-6 py-4 shadow-md sticky top-0 z-10 rounded-t-2xl bg-white">
 
             {/* Title */}
             <div className="flex gap-4 items-center">
