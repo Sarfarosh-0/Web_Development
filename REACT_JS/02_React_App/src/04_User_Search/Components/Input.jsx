@@ -1,4 +1,6 @@
-function Input() {
+import React from 'react';
+
+function Input({ searchTerm, setSearchTerm }) {
     return (
         <div className="input border-t border-slate-300 px-6 py-4 flex items-center">
             <div className="relative w-full">
@@ -19,12 +21,14 @@ function Input() {
                 <input
                     id="search"
                     type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="Search by name or email..."
                     className="w-full rounded-lg font-semibold border-2 border-violet-300 pl-11 pr-5 py-3 outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-200 text-slate-700"
                 />
             </div>
         </div>
-    )
+    );
 }
 
-export default Input
+export default Input;
