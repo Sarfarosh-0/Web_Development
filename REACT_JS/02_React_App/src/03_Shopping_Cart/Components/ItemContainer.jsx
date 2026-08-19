@@ -4,7 +4,7 @@ import items from "../Data/cartItems"
 function ItemContainer() {
 
     return (
-        <section className="mx-3 my-4 p-5.5 bg-red-300 border border-slate-200 rounded-2xl w-full max-w-3xl shadow-sm flex flex-col gap-4 h-full">
+        <section className="mx-3 my-4 p-5.5 bg-white border border-slate-200 rounded-2xl w-full max-w-3xl shadow-sm flex flex-col gap-4 h-full">
 
             {/* Table Headers */}
             <div className="text-xs font-bold text-black uppercase tracking-wider bg-slate-50/80 border border-slate-200 rounded-xl py-3 px-4 w-full grid grid-cols-8 gap-4 items-center">
