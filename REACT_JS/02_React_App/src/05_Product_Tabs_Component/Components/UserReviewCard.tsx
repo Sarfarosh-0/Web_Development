@@ -2,15 +2,16 @@ import React from 'react';
 import Star from "./Star";
 
 interface UserReviewCard {
+    key: number;
     image: string;
     name: string;
     date: string;
     title: string;
     comment: string;
-    rating: string;
+    rating: number;
 }
 
-function UserReviewCard({ image, name, date, title, comment, rating }:UserReviewCard) {
+function UserReviewCard({ image, name, date, title, comment, rating }: UserReviewCard) {
     return (
         <div className="flex w-full flex-col gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
             <div className="flex items-center justify-between gap-3">
@@ -27,6 +28,9 @@ function UserReviewCard({ image, name, date, title, comment, rating }:UserReview
                 </div>
 
                 <div className="flex items-center gap-1 shrink-0">
+                    {[1, 2, 3, 4, 5].map((starIndex) => (
+                        <Star key={starIndex} filled={starIndex <= rating} />
+                    ))}
                 </div>
             </div>
 
