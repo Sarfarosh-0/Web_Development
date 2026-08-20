@@ -1,20 +1,18 @@
 import React from 'react';
 
-// You type the entire props object directly after the destructuring
-function ProductSpecifications({
-    specificationName,
-    specificationDetails
-}: {
-    specificationName: string;
-    specificationDetails: string;
-}) {
+interface ProductSpecificationsProps {
+    label: string;
+    value: string | React.ReactNode;
+}
+
+function ProductSpecifications({ label, value }: ProductSpecificationsProps) {
     return (
-        <div className="w-full p-3 flex">
-            <span className="border border-slate-400 font-bold">
-                {specificationName}
+        <div className="flex w-full overflow-hidden rounded-lg border border-slate-300 text-base">
+            <span className="w-48 shrink-0 bg-slate-50 p-3 font-bold text-slate-700 ">
+                {label}
             </span>
-            <span className="flex-1 border border-slate-400 text-slate-500">
-                {specificationDetails}
+            <span className="min-w-0 flex-1 border-l border-slate-300 bg-white p-3 text-slate-600">
+                {value}
             </span>
         </div>
     );
