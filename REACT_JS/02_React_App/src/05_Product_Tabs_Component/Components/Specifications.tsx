@@ -1,5 +1,5 @@
 import ProductSpecifications from "./ProductSpecifications"
-import specifications from "../ProductDetails"
+import specifications from "../Data/ProductDetails"
 
 function Specifications() {
     return (

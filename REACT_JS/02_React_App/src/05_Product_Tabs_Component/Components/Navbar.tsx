@@ -32,7 +32,7 @@ const navItems = [
 
 function Navbar() {
     return (
-        <nav className="flex justify-evenly items-center mt-10 p-5 w-5xl bg-white border-b border-gray-200 rounded-t-2xl">
+        <nav className="flex justify-evenly items-center gap-8 p-5 mt-10 w-5xl bg-white border-b border-gray-200 rounded-t-2xl">
             {navItems.map((item) => (
                 <a
                     key={item.id}
@@ -40,7 +40,7 @@ function Navbar() {
                     className="flex items-center gap-2 hover:text-blue-600 transition-colors cursor-pointer"
                 >
                     {item.icon}
-                    <span className="font-bold text-sm text-gray-800 hover:text-blue-600">
+                    <span className="font-bold text-lg text-gray-800 hover:text-blue-600">
                         {item.label}
                     </span>
                 </a>
