@@ -1,6 +1,6 @@
 function Overview() {
     return (
-        <section id="overview" className="w-5xl mt-10 p-10 bg-white border border-slate-400 rounded-2xl shadow flex gap-10">
+        <section id="overview" className="w-5xl p-10 bg-white border-b border-slate-400 rounded-b-2xl shadow flex gap-10">
 
             {/* Image Container */}
             <div className="productImage w-100 shrink-0 rounded-2xl">
