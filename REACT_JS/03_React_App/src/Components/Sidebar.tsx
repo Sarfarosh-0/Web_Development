@@ -11,6 +11,7 @@ function Sidebar() {
                         <h1 className="font-bold text-lg text-slate-900 leading-tight">My Notes</h1>
                         <p className="text-xs text-slate-500">Write. Save. Remember.</p>
                     </div>
+                    
                 </header>
 
                 <nav className="flex flex-col gap-1.5 py-4 border-b border-slate-200">
