@@ -2,8 +2,8 @@ import { Plus } from 'lucide-react';
 
 function Header() {
     return (
-        <header className="w-full px-5 py-4 border border-slate-300 rounded-lg flex justify-between items-center ">
-            <div>
+        <header className="w-full sticky top-0 right-0  px-5 py-2.5 border border-slate-300 rounded-lg flex justify-between items-center ">
+            <div className='flex flex-col gap-px'>
                 <h1 className="font-bold text-lg text-slate-900">All Notes</h1>
                 <p className="text-sm text-slate-500">Your thoughts organized</p>
             </div>
