@@ -3,7 +3,7 @@ import Sidebar from "./Components/Sidebar";
 
 function App() {
     return (
-        <div className="flex gap-3">
+        <div className="flex">
             <Sidebar />
             <Main/>
         </div>
