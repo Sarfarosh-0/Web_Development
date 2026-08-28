@@ -1,6 +1,10 @@
 import { X } from "lucide-react";
 
-function AddNote() {
+interface AddNoteProps {
+    onClose: () => void;
+}
+
+function AddNote({ onClose }: AddNoteProps) {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
             <div className="w-full max-w-xl bg-white rounded-xl shadow-xl border border-slate-100 flex flex-col p-6">
@@ -10,6 +14,7 @@ function AddNote() {
                     <h1 className="font-bold text-xl text-slate-900">Add New Note</h1>
                     <button
                         type="button"
+                        onClick={onClose}
                         className="text-slate-400 hover:text-red-600 hover:bg-red-50 p-1.5 active:scale-95 rounded-lg transition-colors"
                     >
                         <X className="w-5 h-5" />
@@ -61,6 +66,7 @@ function AddNote() {
                     <div className="flex justify-end gap-3 pt-4 border-t border-slate-100 mt-2">
                         <button
                             type="button"
+                            onClick={onClose}
                             className="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors"
                         >
                             Cancel
