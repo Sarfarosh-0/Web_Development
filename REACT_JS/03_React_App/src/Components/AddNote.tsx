@@ -48,7 +48,7 @@ function AddNote({ onClose }: AddNoteProps) {
                     </div>
 
                     {/* Color Selection */}
-                    <div className="flex flex-col gap-2">
+                    {/* <div className="flex flex-col gap-2">
                         <label className="text-sm font-semibold text-slate-700">
                             Choose a color
                         </label>
@@ -60,7 +60,7 @@ function AddNote({ onClose }: AddNoteProps) {
                             <button type="button" aria-label="Green" className="h-7 w-7 rounded-full bg-emerald-200 hover:scale-110 transition-transform" />
                             <button type="button" aria-label="Orange" className="h-7 w-7 rounded-full bg-orange-200 hover:scale-110 transition-transform" />
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Actions */}
                     <div className="flex justify-end gap-3 pt-4 border-t border-slate-100 mt-2">
