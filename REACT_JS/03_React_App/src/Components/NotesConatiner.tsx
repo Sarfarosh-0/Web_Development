@@ -1,4 +1,5 @@
 import Emptynotes from "./EmptyNotes";
+import Notebox from "./Notebox";
 
 interface ContainerProps {
     openModal(): void;
@@ -7,9 +8,18 @@ interface ContainerProps {
 
 function NotesContainer({ openModal, notes }: ContainerProps) {
     return (
-        <div className="grid grid-cols-3 gap-4 ">
+        <div className="grid grid-cols-3 gap-4 max-h-screen overflow-auto ">
             {notes > 0 ? (
-                <h1>Hello I'm a Notes</h1>
+                <>
+                <Notebox />
+                <Notebox />
+                <Notebox />
+                <Notebox />
+                <Notebox />
+                <Notebox />
+                <Notebox />
+                <Notebox />
+                </>
             ) : (
                 <Emptynotes openModal={openModal} />
             )}

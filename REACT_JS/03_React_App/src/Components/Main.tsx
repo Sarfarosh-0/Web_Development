@@ -5,6 +5,7 @@ import Header from "./Header";
 import NotesConatiner from "./NotesConatiner";
 import Searchbar from "./Searchbar";
 
+
 interface note {
     id: string;
     title: string;
@@ -49,8 +50,7 @@ function Main() {
         <main className="p-3 px-5 bg-gray-100 flex flex-col gap-3 flex-1">
             <Header openModal={openModal} />
             <Searchbar />
-            <NotesConatiner openModal={openModal} notes={notesNo} />
-
+            <NotesConatiner openModal={openModal} notes={notesNo}/>
             {isOpen && (
                 <AddNote
                     onClose={closeModal}
