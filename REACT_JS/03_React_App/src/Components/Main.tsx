@@ -1,24 +1,43 @@
 import { useState } from "react";
 
-import AddNote from "./AddNote"; 
+import AddNote from "./AddNote";
 import Header from "./Header";
 import NotesConatiner from "./NotesConatiner";
 import Searchbar from "./Searchbar";
 
-// interface Note {
-//     id: string;
-//     title: string;
-//     details: string;
-// }
+interface note {
+    id: string;
+    title: string;
+    details: string;
+}
 
 function Main() {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
-
     const [noteTitle, setNoteTitle] = useState("");
     const [noteDetails, setNoteDetails] = useState("");
 
-    const notesNo: number = 0;
+    const [notes, setNotes] = useState<note[]>(() => {
+        const stored = localStorage.getItem("notes");
+        return stored ? JSON.parse(stored) : [];
+    });
+    
+    function addNote() {
+        const newNote = {
+            id: Date.now().toString(),
+            title: noteTitle,
+            details: noteDetails
+        };
+
+        const updated = [...notes, newNote];
+        setNotes(updated);
+        localStorage.setItem(
+            "notes",
+            JSON.stringify(updated)
+        );
+    }
+
+    const notesNo: number = notes.length || 0;
 
     const openModal = (): void => setIsOpen(true);
     const closeModal = (): void => setIsOpen(false);
@@ -35,7 +54,7 @@ function Main() {
                     noteTitle={noteTitle}
                     noteDetails={noteDetails}
                     setNoteTitle={setNoteTitle}
-                    setNoteDetails={setNoteDetails} 
+                    setNoteDetails={setNoteDetails}
                 />
             )}
         </main>
