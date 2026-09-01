@@ -1,12 +1,27 @@
-export default function Notebox() {
-    return (
-        <div className="w-72 h-72 p-4 bg-amber-200 rounded-lg border border-amber-500 flex flex-col gap-4 overflow-auto ">
-            <h1 className="text-xl font-bold">Welcome to My Notes</h1>
+interface Noteattributes {
+    title: string,
+    details: string,
+    date: string,
+}
 
-            <p className="text-slate-600">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio mollitia harum in dolores asperiores sapiente! Nisi a qui deserunt ratione voluptas ad ut laboriosam. Veniam, sapiente. Ullam sapiente animi minima?
-            </p>
+
+export default function Notebox({ title, details, date }: Noteattributes) {
+    return (
+        <div className="w-full max-w-sm h-72 p-6 bg-linear-to-b from-amber-50 to-amber-100 rounded-2xl border border-amber-300/70 shadow-sm flex flex-col justify-between">
+            
+            <div className="overflow-y-auto pr-1 space-y-2">
+                <h1 className="text-xl font-bold text-amber-950 tracking-tight">
+                    {title}
+                </h1>
+                <p className="text-sm text-amber-900/80 leading-relaxed font-normal">
+                    {details}
+                </p>
+            </div>
+
+            <div className="pt-3 text-xs font-semibold text-amber-800/60">
+                {date}
+            </div>
+
         </div>
     )
 }
-

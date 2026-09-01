@@ -23,11 +23,15 @@ function Main() {
         return stored ? JSON.parse(stored) : [];
     });
 
+    const now = new Date();
+    let date: string = now.toDateString();
+
     function addNote() {
         const newNote = {
             id: Date.now().toString(),
             title: noteTitle,
-            details: noteDetails
+            details: noteDetails,
+            date: date,
         };
 
         const updated = [...notes, newNote];
@@ -50,13 +54,14 @@ function Main() {
         <main className="p-3 px-5 bg-gray-100 flex flex-col gap-3 flex-1">
             <Header openModal={openModal} />
             <Searchbar />
-            <NotesConatiner openModal={openModal} notes={notesNo}/>
+            <NotesConatiner openModal={openModal} notes={notesNo} title={noteTitle} details={noteDetails} date={date} />
             {isOpen && (
                 <AddNote
                     onClose={closeModal}
                     onSave={addNote}
                     noteTitle={noteTitle}
                     noteDetails={noteDetails}
+                    date={date}
                     setNoteTitle={setNoteTitle}
                     setNoteDetails={setNoteDetails}
                 />

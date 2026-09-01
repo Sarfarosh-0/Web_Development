@@ -5,6 +5,7 @@ interface AddNoteProps {
     onSave: () => void;
     noteTitle: string;
     noteDetails: string;
+    date: string;
     setNoteTitle: any;
     setNoteDetails: any;
 }
