@@ -2,13 +2,14 @@ import { X } from "lucide-react";
 
 interface AddNoteProps {
     onClose: () => void;
+    onSave: () => void;
     noteTitle: string;
     noteDetails: string;
     setNoteTitle: any;
     setNoteDetails: any;
 }
 
-function AddNote({ onClose, noteTitle, noteDetails, setNoteTitle, setNoteDetails }: AddNoteProps) {
+function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNoteDetails }: AddNoteProps) {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
             <div className="w-full max-w-xl bg-white rounded-xl shadow-xl border border-slate-100 flex flex-col p-6">
@@ -67,7 +68,9 @@ function AddNote({ onClose, noteTitle, noteDetails, setNoteTitle, setNoteDetails
                             Cancel
                         </button>
                         <button
-                            onClick={onClose}
+                            onClick={() => {
+                                onSave();
+                            }}
                             type="submit"
                             className="px-4 py-2 rounded-lg text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm transition-colors"
                         >

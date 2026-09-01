@@ -21,7 +21,7 @@ function Main() {
         const stored = localStorage.getItem("notes");
         return stored ? JSON.parse(stored) : [];
     });
-    
+
     function addNote() {
         const newNote = {
             id: Date.now().toString(),
@@ -31,13 +31,16 @@ function Main() {
 
         const updated = [...notes, newNote];
         setNotes(updated);
+
         localStorage.setItem(
             "notes",
             JSON.stringify(updated)
         );
+
+        closeModal();
     }
 
-    const notesNo: number = notes.length || 0;
+    const notesNo = notes.length;
 
     const openModal = (): void => setIsOpen(true);
     const closeModal = (): void => setIsOpen(false);
@@ -51,6 +54,7 @@ function Main() {
             {isOpen && (
                 <AddNote
                     onClose={closeModal}
+                    onSave={addNote}
                     noteTitle={noteTitle}
                     noteDetails={noteDetails}
                     setNoteTitle={setNoteTitle}
