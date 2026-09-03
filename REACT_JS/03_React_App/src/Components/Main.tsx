@@ -2,50 +2,47 @@ import { useState } from "react";
 
 import AddNote from "./AddNote";
 import Header from "./Header";
-import NotesConatiner from "./NotesConatiner";
+import NotesContainer from "./NotesContainer";
 import Searchbar from "./Searchbar";
 
-
-interface note {
+export interface Note {
     id: string;
     title: string;
     details: string;
+    date: string;
 }
 
 function Main() {
-
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [noteTitle, setNoteTitle] = useState("");
     const [noteDetails, setNoteDetails] = useState("");
 
-    const [notes, setNotes] = useState<note[]>(() => {
+    const [notes, setNotes] = useState<Note[]>(() => {
         const stored = localStorage.getItem("notes");
         return stored ? JSON.parse(stored) : [];
     });
 
-    const now = new Date();
-    let date: string = now.toDateString();
+    const currentDate = new Date().toDateString();
 
     function addNote() {
-        const newNote = {
+        if (!noteTitle.trim()) return;
+
+        const newNote: Note = {
             id: Date.now().toString(),
             title: noteTitle,
             details: noteDetails,
-            date: date,
+            date: currentDate,
         };
 
-        const updated = [...notes, newNote];
-        setNotes(updated);
+        const updatedNotes = [...notes, newNote];
 
-        localStorage.setItem(
-            "notes",
-            JSON.stringify(updated)
-        );
+        setNotes(updatedNotes);
+        localStorage.setItem("notes", JSON.stringify(updatedNotes));
 
+        setNoteTitle("");
+        setNoteDetails("");
         closeModal();
     }
-
-    const notesNo = notes.length;
 
     const openModal = (): void => setIsOpen(true);
     const closeModal = (): void => setIsOpen(false);
@@ -54,16 +51,18 @@ function Main() {
         <main className="p-3 px-5 bg-gray-100 flex flex-col gap-3 flex-1">
             <Header openModal={openModal} />
             <Searchbar />
-            <NotesConatiner openModal={openModal} notes={notesNo} title={noteTitle} details={noteDetails} date={date} />
+
+            <NotesContainer openModal={openModal} notes={notes} />
+
             {isOpen && (
                 <AddNote
                     onClose={closeModal}
                     onSave={addNote}
                     noteTitle={noteTitle}
                     noteDetails={noteDetails}
-                    date={date}
                     setNoteTitle={setNoteTitle}
                     setNoteDetails={setNoteDetails}
+                    date={currentDate}
                 />
             )}
         </main>
