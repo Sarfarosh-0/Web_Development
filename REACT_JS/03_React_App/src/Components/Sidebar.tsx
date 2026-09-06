@@ -2,8 +2,8 @@ import { useState } from "react";
 import { NotepadText, Star, Trash2 } from "lucide-react";
 
 const NAV_ITEMS = [
-    { id: "all-notes", label: "All Notes", icon: NotepadText, count: 5 },
-    { id: "favorites", label: "Favorites", icon: Star, count: 2 },
+    { id: "all-notes", label: "All Notes", icon: NotepadText, count: 0 },
+    { id: "favorites", label: "Favorites", icon: Star, count: 0 },
     { id: "trash", label: "Trash", icon: Trash2, count: 0 },
 ];
 
@@ -13,7 +13,7 @@ function Sidebar() {
     return (
         <aside className="w-64 h-150 bg-slate-50 border-r border-slate-200 p-5 flex flex-col justify-between select-none">
             <div className="flex flex-col gap-4">
-                {/* Header */}
+
                 <header className="flex items-center gap-3 border-b border-slate-200 pb-4">
                     <img
                         src="https://cdn-icons-png.flaticon.com/128/3075/3075908.png"
@@ -29,7 +29,6 @@ function Sidebar() {
                     </div>
                 </header>
 
-                {/* Navigation */}
                 <nav className="flex flex-col gap-1">
                     {NAV_ITEMS.map((item) => {
                         const Icon = item.icon;
@@ -66,7 +65,6 @@ function Sidebar() {
                 </nav>
             </div>
 
-            {/* User Profile */}
             <div className="pt-4 border-t border-slate-200 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-xs shrink-0">
                     SA
