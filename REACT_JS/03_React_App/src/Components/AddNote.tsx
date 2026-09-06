@@ -14,7 +14,7 @@ interface AddNoteProps {
 function AddNote({ onClose, onSave, noteTitle, noteDetails, date, setNoteTitle, setNoteDetails, setSelectedDate }: AddNoteProps) {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
-            <div className="w-full max-w-xl bg-white rounded-xl shadow-xl border border-slate-100 flex flex-col p-6">
+            <div className="w-full max-w-xl bg-gray-50 rounded-xl shadow-xl border border-slate-100 flex flex-col p-6">
 
                 {/* Header */}
                 <div className="flex items-center justify-between pb-4 border-b border-slate-100">
@@ -29,7 +29,7 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, date, setNoteTitle, 
                 </div>
 
                 {/* Form Body */}
-                <div className="flex flex-col gap-4 pt-4">
+                <div className="flex flex-col gap-4 pt-4 ">
                     <div className="flex flex-col gap-1.5">
                         <label htmlFor="noteTitle" className="text-sm font-semibold text-slate-700">
                             Title
@@ -39,7 +39,7 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, date, setNoteTitle, 
                             value={noteTitle}
                             onChange={(e) => setNoteTitle(e.target.value)}
                             id="noteTitle"
-                            className="w-full px-3.5 py-2 border border-slate-200 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-slate-400"
+                            className="w-full px-3.5 py-2 border bg-white border-slate-200 rounded-lg text-sm text-slat-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-slate-400"
                             placeholder="Enter note title..."
                             required
                         />
@@ -54,7 +54,7 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, date, setNoteTitle, 
                             onChange={(e) => setNoteDetails(e.target.value)}
                             id="noteContent"
                             rows={8}
-                            className="w-full px-3.5 py-2 border border-slate-200 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-slate-400 resize-none"
+                            className="w-full px-3.5 py-2 border bg-white border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-slate-400 resize-none"
                             placeholder="Write your note here..."
                             required
                         />
@@ -68,6 +68,7 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, date, setNoteTitle, 
                             type="date"
                             value={date}
                             onChange={(e) => setSelectedDate(e.target.value)}
+                            className="w-full px-3.5 py-2 border bg-white border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-slate-400"
                         />
                     </div>
 

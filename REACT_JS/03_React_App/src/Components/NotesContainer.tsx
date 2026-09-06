@@ -1,9 +1,6 @@
-// ==========================================
-// NotesContainer.tsx
-// ==========================================
 import Emptynotes from "./EmptyNotes";
 import Notebox from "./Notebox";
-import { Note } from "./Main";
+import type { Note } from "./Main";
 
 interface ContainerProps {
     openModal(): void;
