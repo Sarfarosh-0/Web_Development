@@ -13,39 +13,42 @@ export interface Note {
 }
 
 function Main() {
+    const currentDate = new Date().toDateString();
+
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [noteTitle, setNoteTitle] = useState("");
     const [noteDetails, setNoteDetails] = useState("");
+    const [selectedDate, setSelectedDate] = useState(currentDate);
 
     const [notes, setNotes] = useState<Note[]>(() => {
         const stored = localStorage.getItem("notes");
         return stored ? JSON.parse(stored) : [];
     });
 
-    const currentDate = new Date().toDateString();
-
     function addNote() {
         if (!noteTitle.trim()) return;
 
         const newNote: Note = {
             id: Date.now().toString(),
-            title: noteTitle,
-            details: noteDetails,
-            date: currentDate,
+            title: noteTitle.trim(),
+            details: noteDetails.trim(),
+            date: selectedDate || currentDate,
         };
 
         const updatedNotes = [...notes, newNote];
-
         setNotes(updatedNotes);
         localStorage.setItem("notes", JSON.stringify(updatedNotes));
-
-        setNoteTitle("");
-        setNoteDetails("");
         closeModal();
     }
 
     const openModal = (): void => setIsOpen(true);
-    const closeModal = (): void => setIsOpen(false);
+
+    const closeModal = (): void => {
+        setIsOpen(false);
+        setNoteTitle("");
+        setNoteDetails("");
+        setSelectedDate(currentDate);
+    };
 
     return (
         <main className="p-3 px-5 bg-gray-100 flex flex-col gap-3 flex-1">
@@ -60,9 +63,10 @@ function Main() {
                     onSave={addNote}
                     noteTitle={noteTitle}
                     noteDetails={noteDetails}
+                    date={selectedDate}
                     setNoteTitle={setNoteTitle}
                     setNoteDetails={setNoteDetails}
-                    date={currentDate}
+                    setSelectedDate={setSelectedDate}
                 />
             )}
         </main>

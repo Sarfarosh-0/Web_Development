@@ -8,9 +8,10 @@ interface AddNoteProps {
     date: string;
     setNoteTitle: any;
     setNoteDetails: any;
+    setSelectedDate: any;
 }
 
-function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNoteDetails }: AddNoteProps) {
+function AddNote({ onClose, onSave, noteTitle, noteDetails, date, setNoteTitle, setNoteDetails, setSelectedDate }: AddNoteProps) {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
             <div className="w-full max-w-xl bg-white rounded-xl shadow-xl border border-slate-100 flex flex-col p-6">
@@ -56,6 +57,17 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNot
                             className="w-full px-3.5 py-2 border border-slate-200 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-slate-400 resize-none"
                             placeholder="Write your note here..."
                             required
+                        />
+                    </div>
+                    <div className="flex flex-col gap-1.5">
+                        <label htmlFor="noteContent" className="text-sm font-semibold text-slate-700">
+                            Date
+                        </label>
+                        <input
+                            id="date-picker"
+                            type="date"
+                            value={date}
+                            onChange={(e) => setSelectedDate(e.target.value)}
                         />
                     </div>
 
