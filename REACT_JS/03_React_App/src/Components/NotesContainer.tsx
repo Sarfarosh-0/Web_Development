@@ -11,7 +11,7 @@ interface ContainerProps {
 
 function NotesContainer({ openModal, notes }: ContainerProps) {
     return (
-        <div className="grid grid-cols-3 gap-4 max-h-screen overflow-auto">
+        <div className="grid grid-cols-3 gap-4 max-h-160 overflow-auto scrollbar-none">
             {notes.length > 0 ? (
                 notes.map((note) => (
                     <Notebox
