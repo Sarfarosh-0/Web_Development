@@ -1,6 +1,6 @@
 import Emptynotes from "./EmptyNotes";
 import Notebox from "./Notebox";
-import type { Note } from "./Main";
+import type { Note } from "../App";
 
 interface ContainerProps {
     openModal(): void;
