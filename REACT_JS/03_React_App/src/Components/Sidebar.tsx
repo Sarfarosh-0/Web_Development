@@ -7,8 +7,8 @@ function Sidebar({ allnotes }: { allnotes: number }) {
 
     const NAV_ITEMS = [
         { id: "all-notes", label: "All Notes", icon: NotepadText, count: allnotes },
-        { id: "favorites", label: "Favorites", icon: Star, count: 0 },
-        { id: "trash", label: "Trash", icon: Trash2, count: 0 },
+        // { id: "favorites", label: "Favorites", icon: Star, count: 0 },
+        // { id: "trash", label: "Trash", icon: Trash2, count: 0 },
     ];
     return (
         <aside className="w-64 h-150 bg-linear-to-b from-rose-50 to-purple-50 border-r border-rose-200/80 p-5 flex flex-col justify-between select-none">
