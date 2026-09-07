@@ -11,10 +11,10 @@ function Sidebar() {
     const [activeTab, setActiveTab] = useState("all-notes");
 
     return (
-        <aside className="w-64 h-150 bg-slate-50 border-r border-slate-200 p-5 flex flex-col justify-between select-none">
+        <aside className="w-64 h-150 bg-linear-to-b from-rose-50 to-purple-50 border-r border-rose-200/80 p-5 flex flex-col justify-between select-none">
             <div className="flex flex-col gap-4">
 
-                <header className="flex items-center gap-3 border-b border-slate-200 pb-4">
+                <header className="flex items-center gap-3 border-b border-rose-200/60 pb-4">
                     <img
                         src="https://cdn-icons-png.flaticon.com/128/3075/3075908.png"
                         alt="Logo"
@@ -25,7 +25,7 @@ function Sidebar() {
                         <h1 className="font-bold text-base text-slate-900 leading-tight">
                             My Notes
                         </h1>
-                        <p className="text-xs text-slate-500">Write. Save. Remember.</p>
+                        <p className="text-xs text-slate-600">Write. Save. Remember.</p>
                     </div>
                 </header>
 
@@ -40,21 +40,21 @@ function Sidebar() {
                                 href={`#${item.id}`}
                                 onClick={() => setActiveTab(item.id)}
                                 className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive
-                                        ? "bg-slate-200/80 text-slate-900"
-                                        : "text-slate-600 hover:bg-slate-200/50 hover:text-slate-900"
+                                        ? "bg-rose-100/70 text-slate-900"
+                                        : "text-slate-600 hover:bg-rose-100/40 hover:text-slate-900"
                                     }`}
                             >
                                 <div className="flex items-center gap-2.5">
                                     <Icon
-                                        className={`w-4 h-4 ${isActive ? "text-indigo-600" : "text-slate-500"
+                                        className={`w-4 h-4 ${isActive ? "text-rose-500" : "text-slate-500"
                                             }`}
                                     />
                                     <span>{item.label}</span>
                                 </div>
                                 <span
                                     className={`px-2 py-0.5 rounded-full text-xs font-semibold ${isActive
-                                            ? "bg-indigo-600 text-white"
-                                            : "bg-slate-200/70 text-slate-600"
+                                            ? "bg-rose-500 text-white"
+                                            : "bg-rose-100/60 text-slate-600"
                                         }`}
                                 >
                                     {item.count}
@@ -65,8 +65,8 @@ function Sidebar() {
                 </nav>
             </div>
 
-            <div className="pt-4 border-t border-slate-200 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-xs shrink-0">
+            <div className="pt-4 border-t border-rose-200/60 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xs shrink-0">
                     SA
                 </div>
                 <div className="flex flex-col text-xs overflow-hidden">

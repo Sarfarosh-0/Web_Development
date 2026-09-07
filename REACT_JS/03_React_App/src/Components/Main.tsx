@@ -51,7 +51,7 @@ function Main() {
     };
 
     return (
-        <main className="px-3 bg-gray-100 flex flex-col gap-3 flex-1">
+        <main className="px-3 min-h-screen bg-rose-50/30 flex flex-col gap-3 flex-1">
             <Header openModal={openModal} />
             <Searchbar />
 
