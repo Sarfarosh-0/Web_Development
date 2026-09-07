@@ -5,6 +5,7 @@ import Header from "./Header";
 import NotesContainer from "./NotesContainer";
 import Searchbar from "./Searchbar";
 
+
 export interface Note {
     id: string;
     title: string;
@@ -18,12 +19,13 @@ function Main() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [noteTitle, setNoteTitle] = useState("");
     const [noteDetails, setNoteDetails] = useState("");
-    const [selectedDate, setSelectedDate] = useState(currentDate);
 
     const [notes, setNotes] = useState<Note[]>(() => {
         const stored = localStorage.getItem("notes");
         return stored ? JSON.parse(stored) : [];
     });
+
+    let allNotes: number = notes.length;
 
     function addNote() {
         if (!noteTitle.trim()) return;
@@ -32,7 +34,7 @@ function Main() {
             id: Date.now().toString(),
             title: noteTitle.trim(),
             details: noteDetails.trim(),
-            date: selectedDate || currentDate,
+            date: currentDate,
         };
 
         const updatedNotes = [...notes, newNote];
@@ -47,29 +49,29 @@ function Main() {
         setIsOpen(false);
         setNoteTitle("");
         setNoteDetails("");
-        setSelectedDate(currentDate);
     };
 
     return (
-        <main className="px-3 min-h-screen bg-rose-50/30 flex flex-col gap-3 flex-1">
-            <Header openModal={openModal} />
-            <Searchbar />
+        <>
+            <main className="px-3 min-h-screen bg-rose-50/30 flex flex-col gap-3 flex-1">
+                <Header openModal={openModal} />
+                <Searchbar />
 
-            <NotesContainer openModal={openModal} notes={notes} />
+                <NotesContainer openModal={openModal} notes={notes} />
 
-            {isOpen && (
-                <AddNote
-                    onClose={closeModal}
-                    onSave={addNote}
-                    noteTitle={noteTitle}
-                    noteDetails={noteDetails}
-                    date={selectedDate}
-                    setNoteTitle={setNoteTitle}
-                    setNoteDetails={setNoteDetails}
-                    setSelectedDate={setSelectedDate}
-                />
-            )}
-        </main>
+                {isOpen && (
+                    <AddNote
+                        onClose={closeModal}
+                        onSave={addNote}
+                        noteTitle={noteTitle}
+                        noteDetails={noteDetails}
+                        date={currentDate}
+                        setNoteTitle={setNoteTitle}
+                        setNoteDetails={setNoteDetails}
+                    />
+                )}
+            </main>
+        </>
     );
 }
 
