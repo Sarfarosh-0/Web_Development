@@ -48,6 +48,8 @@ function App() {
         setNoteDetails("");
     };
 
+    const [searchTerm, setSearchTerm] = useState("");
+
     return (
         <div className="flex min-h-screen bg-rose-50/30">
             <Sidebar allnotes={allNotes} />
@@ -62,6 +64,8 @@ function App() {
                 currentDate={currentDate}
                 setNoteTitle={setNoteTitle}
                 setNoteDetails={setNoteDetails}
+                searchTerm={searchTerm} 
+                setSearchTerm={setSearchTerm}
             />
         </div>
     );

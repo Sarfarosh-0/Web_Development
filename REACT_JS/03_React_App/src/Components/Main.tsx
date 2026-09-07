@@ -13,6 +13,8 @@ interface MainProps {
     noteTitle: string;
     noteDetails: string;
     currentDate: string;
+    searchTerm: string;
+    setSearchTerm: (value: string) => void;
     setNoteTitle: (value: string) => void;
     setNoteDetails: (value: string) => void;
 }
@@ -28,13 +30,15 @@ function Main({
     currentDate,
     setNoteTitle,
     setNoteDetails,
+    searchTerm,
+    setSearchTerm
 }: MainProps) {
     return (
         <main className="px-4 py-3 min-h-screen bg-rose-50/30 flex flex-col gap-3 flex-1">
             <Header openModal={openModal} />
-            <Searchbar />
+            <Searchbar searchTerm={searchTerm} setSearch={setSearchTerm} />
 
-            <NotesContainer openModal={openModal} notes={notes} />
+            <NotesContainer openModal={openModal} notes={notes} searchTerm={searchTerm} />
 
             {isOpen && (
                 <AddNote
