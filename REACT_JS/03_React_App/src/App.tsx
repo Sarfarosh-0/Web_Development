@@ -16,13 +16,19 @@ function App() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [noteTitle, setNoteTitle] = useState("");
     const [noteDetails, setNoteDetails] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
     const [notes, setNotes] = useState<Note[]>(() => {
         const stored = localStorage.getItem("notes");
         return stored ? JSON.parse(stored) : [];
     });
 
-    const allNotes: number = notes.length;
+    const allNotesCount: number = notes.length;
+
+    const filteredNotes = notes.filter((note) =>
+        note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        note.details.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     function addNote() {
         if (!noteTitle.trim()) return;
@@ -40,6 +46,12 @@ function App() {
         closeModal();
     }
 
+    const deleteNote = (idToDelete: string) => {
+        const updatedNotes = notes.filter((note) => note.id !== idToDelete);
+        setNotes(updatedNotes);
+        localStorage.setItem("notes", JSON.stringify(updatedNotes));
+    };
+
     const openModal = (): void => setIsOpen(true);
 
     const closeModal = (): void => {
@@ -48,14 +60,12 @@ function App() {
         setNoteDetails("");
     };
 
-    const [searchTerm, setSearchTerm] = useState("");
-
     return (
         <div className="flex min-h-screen bg-rose-50/30">
-            <Sidebar allnotes={allNotes} />
+            <Sidebar allnotes={allNotesCount} />
             <Main
                 openModal={openModal}
-                notes={notes}
+                notes={filteredNotes}
                 isOpen={isOpen}
                 closeModal={closeModal}
                 onSave={addNote}
@@ -64,8 +74,9 @@ function App() {
                 currentDate={currentDate}
                 setNoteTitle={setNoteTitle}
                 setNoteDetails={setNoteDetails}
-                searchTerm={searchTerm} 
+                searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
+                deleteNote={deleteNote}
             />
         </div>
     );
