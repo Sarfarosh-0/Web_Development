@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Main from "./Components/Main";
 import Sidebar from "./Components/Sidebar";
+import ConfirmModal from "./Components/ConfirmModal";
 
 export interface Note {
     id: string;
@@ -66,6 +67,8 @@ function App() {
         }
     };
 
+    const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+
     function clearAllData() {
         localStorage.removeItem('notes');
         localStorage.removeItem('deletedNotes');
@@ -92,7 +95,7 @@ function App() {
                 deletedNotesCount={allDeletedNotesCount}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
-                clearAllData={clearAllData}
+                clearAllData={() => setIsConfirmOpen(true)}
             />
             <Main
                 openModal={openModal}
@@ -109,6 +112,15 @@ function App() {
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
                 deleteNote={deleteNote}
+            />
+
+            <ConfirmModal
+                isOpen={isConfirmOpen}
+                onClose={() => setIsConfirmOpen(false)}
+                onConfirm={clearAllData}
+                title="Clear all application data?"
+                message="This will permanently delete all your active notes and trash notes. This action cannot be undone."
+                confirmText="Yes, Clear All"
             />
         </div>
     );
