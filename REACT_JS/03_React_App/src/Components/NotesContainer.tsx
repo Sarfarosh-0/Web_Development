@@ -9,9 +9,10 @@ interface ContainerProps {
     searchTerm: string;
     deleteNote: (id: string) => void;
     activeTab: TabType;
+    restoreNote: (id: string) => void;
 }
 
-function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab }: ContainerProps) {
+function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab, restoreNote }: ContainerProps) {
     const term = (searchTerm || "").toLowerCase();
 
     const filteredNotes = notes.filter((note) =>
@@ -41,6 +42,8 @@ function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab }:
                             details={note.details}
                             date={note.date}
                             onDelete={() => deleteNote(note.id)}
+                            onRestore={() => restoreNote(note.id)} 
+                            isTrash={activeTab === "trash"}        
                         />
                     ))
                 ) : (

@@ -67,6 +67,19 @@ function App() {
         }
     };
 
+    function restoreNote(idToRestore: string) {
+        const itemToRestore = deletedNotes.find((item) => item.id === idToRestore);
+        if (!itemToRestore) return;
+        const updatedNotesList = [...notes, itemToRestore];
+        const updatedDeletedList = deletedNotes.filter((item) => item.id !== idToRestore);
+
+        setNotes(updatedNotesList);
+        setDeletedNotes(updatedDeletedList);
+
+        localStorage.setItem("notes", JSON.stringify(updatedNotesList));
+        localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletedList));
+    }
+
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -127,6 +140,7 @@ function App() {
                 setSearchTerm={setSearchTerm}
                 deleteNote={deleteNote}
                 onOpenSidebar={() => setIsSidebarOpen(true)}
+                restoreNote={restoreNote}
             />
 
             <ConfirmModal
