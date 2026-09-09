@@ -66,6 +66,14 @@ function App() {
         }
     };
 
+    function clearAllData() {
+        localStorage.removeItem('notes');
+        localStorage.removeItem('deletedNotes');
+        setNotes([]);
+        setDeletedNotes([]);
+        setSearchTerm("");
+    }
+
     const allNotesCount: number = notes.length;
     const allDeletedNotesCount: number = deletedNotes.length;
 
@@ -84,6 +92,7 @@ function App() {
                 deletedNotesCount={allDeletedNotesCount}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
+                clearAllData={clearAllData}
             />
             <Main
                 openModal={openModal}

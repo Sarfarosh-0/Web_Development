@@ -1,4 +1,4 @@
-import { NotepadText,  Trash2 } from "lucide-react";
+import { NotepadText, DatabaseX, Trash2 } from "lucide-react";
 
 export type TabType = "all-notes" | "trash";
 
@@ -7,9 +7,10 @@ interface SidebarProps {
     deletedNotesCount: number;
     activeTab: TabType;
     setActiveTab: (tab: TabType) => void;
+    clearAllData?: () => void;
 }
 
-function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab }: SidebarProps) {
+function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAllData }: SidebarProps) {
     const NAV_ITEMS: { id: TabType; label: string; icon: typeof NotepadText; count: number }[] = [
         { id: "all-notes", label: "All Notes", icon: NotepadText, count: allnotes },
         { id: "trash", label: "Trash", icon: Trash2, count: deletedNotesCount },
@@ -70,17 +71,28 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab }: Sideb
                 </nav>
             </div>
 
-            <div className="pt-4 border-t border-rose-200/60 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xs shrink-0">
-                    SA
-                </div>
-                <div className="flex flex-col text-xs overflow-hidden">
-                    <span className="font-semibold text-slate-800 truncate">
-                        Sarfarosh Alam
-                    </span>
-                    <span className="text-slate-500 truncate">
-                        sarfaroshalam51@gmail.com
-                    </span>
+            <div className="flex flex-col gap-3">
+                <button
+                    type="button"
+                    onClick={clearAllData}
+                    className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-rose-600 bg-rose-100/50 hover:bg-rose-500 hover:text-white border border-rose-200/80 active:scale-95 transition-all duration-150 shadow-xs cursor-pointer group"
+                >
+                    <DatabaseX className="w-4 h-4 text-rose-500 group-hover:text-white transition-colors" />
+                    <span>Clear All Data</span>
+                </button>
+
+                <div className="pt-3 border-t border-rose-200/60 flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xs shrink-0">
+                        SA
+                    </div>
+                    <div className="flex flex-col text-xs overflow-hidden">
+                        <span className="font-semibold text-slate-800 truncate">
+                            Sarfarosh Alam
+                        </span>
+                        <span className="text-slate-500 truncate">
+                            sarfaroshalam51@gmail.com
+                        </span>
+                    </div>
                 </div>
             </div>
         </aside>
