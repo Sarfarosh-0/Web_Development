@@ -21,11 +21,11 @@ export default function ConfirmModal({
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs transition-opacity">
-            <div className="w-full max-w-sm bg-white rounded-2xl p-6 border border-rose-100 shadow-xl flex flex-col gap-4 animate-in fade-in zoom-in-95 duration-150">
+            <div className="w-full max-w-sm bg-white rounded-2xl p-6 border border-sky-100 shadow-xl flex flex-col gap-4 animate-in fade-in zoom-in-95 duration-150">
 
                 <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center shrink-0">
                             <AlertTriangle className="w-5 h-5" />
                         </div>
                         <h2 className="text-lg font-bold text-slate-900 leading-snug">
@@ -60,7 +60,7 @@ export default function ConfirmModal({
                             onConfirm();
                             onClose();
                         }}
-                        className="px-4 py-2 text-xs font-semibold text-white bg-rose-500 hover:bg-rose-600 active:scale-95 rounded-lg transition-all duration-150 cursor-pointer shadow-xs"
+                        className="px-4 py-2 text-xs font-semibold text-white bg-sky-500 hover:bg-sky-600 active:scale-95 rounded-lg transition-all duration-150 cursor-pointer shadow-xs"
                     >
                         {confirmText}
                     </button>

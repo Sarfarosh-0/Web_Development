@@ -6,11 +6,11 @@ interface ContainerProps {
 
 export default function Emptynotes({ openModal }: ContainerProps) {
     return (
-        <div className="col-span-full flex flex-col items-center justify-center w-full min-h-96 rounded-2xl border border-rose-200/80 bg-linear-to-b from-rose-50/50 to-purple-50/50 text-center">
+        <div className="col-span-full flex flex-col items-center justify-center w-full min-h-96 rounded-2xl border border-sky-200/80 bg-linear-to-b from-sky-50/50 to-indigo-50/50 text-center">
 
             <button
                 onClick={openModal}
-                className="w-12 h-12 rounded-full bg-rose-100/80 text-rose-500 hover:bg-rose-100 hover:scale-105 active:scale-90 flex items-center justify-center mb-3 transition-all ease-in-out duration-300"
+                className="w-12 h-12 rounded-full bg-sky-100/80 text-sky-500 hover:bg-sky-100 hover:scale-105 active:scale-90 flex items-center justify-center mb-3 transition-all ease-in-out duration-300"
             >
                 <FilePlus2 className="w-6 h-6" />
             </button>

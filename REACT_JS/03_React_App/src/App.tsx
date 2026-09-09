@@ -90,7 +90,7 @@ function App() {
     };
 
     return (
-        <div className="flex min-h-screen bg-rose-50/30">
+        <div className="flex min-h-screen bg-sky-50/30">
 
             {isSidebarOpen && (
                 <div

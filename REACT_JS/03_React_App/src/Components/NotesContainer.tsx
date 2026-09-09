@@ -26,7 +26,7 @@ function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab }:
             <div className="flex items-center justify-between px-1">
                 <h1 className="text-2xl font-bold text-slate-800 tracking-tight flex items-center gap-2">
                     {containerTitle}
-                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600 border border-rose-200/60">
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-600 border border-sky-200/60">
                         {filteredNotes.length}
                     </span>
                 </h1>

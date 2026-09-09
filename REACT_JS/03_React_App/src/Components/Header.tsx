@@ -7,12 +7,12 @@ interface HeaderProps {
 
 function Header({ openModal, onOpenSidebar }: HeaderProps) {
     return (
-        <header className="w-full sticky top-0 z-10 right-0 px-5 py-2.5 border border-rose-200/80 bg-linear-to-b from-rose-50 to-purple-50 rounded-xl flex justify-between items-center shadow-sm">
+        <header className="w-full sticky top-0 z-10 right-0 px-5 py-2.5 border border-sky-200/80 bg-linear-to-b from-sky-50 to-indigo-50 rounded-xl flex justify-between items-center shadow-sm">
             <div className="flex items-center gap-3">
                 <button
                     type="button"
                     onClick={onOpenSidebar}
-                    className="md:hidden text-slate-600 hover:text-rose-600 hover:bg-rose-100/50 p-1.5 rounded-lg transition-colors"
+                    className="md:hidden text-slate-600 hover:text-sky-600 hover:bg-sky-100/50 p-1.5 rounded-lg transition-colors"
                 >
                     <Menu className="w-5 h-5" />
                 </button>
@@ -26,7 +26,7 @@ function Header({ openModal, onOpenSidebar }: HeaderProps) {
             <button
                 id="addNoteBtn"
                 onClick={openModal}
-                className="bg-rose-500 hover:bg-rose-600 active:scale-95 transition-all duration-150 rounded-lg px-4 py-2 font-medium text-white flex items-center gap-2 shadow-sm"
+                className="bg-sky-500 hover:bg-sky-600 active:scale-95 transition-all duration-150 rounded-lg px-4 py-2 font-medium text-white flex items-center gap-2 shadow-sm"
             >
                 <Plus />
                 <span className="hidden sm:inline">Add Note</span>

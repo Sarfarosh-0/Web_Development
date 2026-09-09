@@ -16,7 +16,7 @@ function Searchbar({searchTerm, setSearch}: SearchbarProps) {
                     onChange={(e) => setSearch(e.target.value)}
                     type="text"
                     placeholder="Search notes..."
-                    className="w-full rounded-xl font-medium border border-rose-200/80 bg-linear-to-b from-rose-50 to-purple-50 pl-11 pr-5 py-3 outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-100 text-slate-800 placeholder:text-slate-400 shadow-xs"
+                    className="w-full rounded-xl font-medium border border-sky-200/80 bg-linear-to-b from-sky-50 to-indigo-50 pl-11 pr-5 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100 text-slate-800 placeholder:text-slate-400 shadow-xs"
                 />
             </div>
         </div>
