@@ -20,6 +20,7 @@ interface MainProps {
     setNoteDetails: (value: string) => void;
     deleteNote: (id: string) => void;
     activeTab: TabType;
+    onOpenSidebar: () => void;
 }
 
 function Main({
@@ -37,10 +38,11 @@ function Main({
     setSearchTerm,
     deleteNote,
     activeTab,
+    onOpenSidebar,
 }: MainProps) {
     return (
         <main className="px-4 py-3 min-h-screen bg-rose-50/30 flex flex-col gap-3 flex-1">
-            <Header openModal={openModal} />
+            <Header openModal={openModal} onOpenSidebar={onOpenSidebar} />
             <Searchbar searchTerm={searchTerm} setSearch={setSearchTerm} />
 
             <NotesContainer

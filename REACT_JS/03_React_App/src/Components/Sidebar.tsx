@@ -1,4 +1,4 @@
-import { NotepadText, DatabaseX, Trash2 } from "lucide-react";
+import { NotepadText, DatabaseX, Trash2, X } from "lucide-react";
 
 export type TabType = "all-notes" | "trash";
 
@@ -8,16 +8,26 @@ interface SidebarProps {
     activeTab: TabType;
     setActiveTab: (tab: TabType) => void;
     clearAllData?: () => void;
+    isSidebarOpen: boolean;
+    onClose: () => void;
 }
 
-function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAllData }: SidebarProps) {
+function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAllData, isSidebarOpen, onClose }: SidebarProps) {
     const NAV_ITEMS: { id: TabType; label: string; icon: typeof NotepadText; count: number }[] = [
         { id: "all-notes", label: "All Notes", icon: NotepadText, count: allnotes },
         { id: "trash", label: "Trash", icon: Trash2, count: deletedNotesCount },
     ];
 
     return (
-        <aside className="w-64 h-150 bg-linear-to-b from-rose-50 to-purple-50 border-r border-rose-200/80 p-5 flex flex-col justify-between select-none">
+        <aside className={`
+            fixed z-50 top-0 left-0 h-full w-64
+            bg-linear-to-b from-rose-50 to-purple-50
+            border-r border-rose-200/80 p-5
+            flex flex-col justify-between select-none
+            transition-transform duration-300
+            ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+            md:static md:translate-x-0 md:h-screen md:shrink-0
+        `}>
             <div className="flex flex-col gap-4">
 
                 <header className="flex items-center gap-3 border-b border-rose-200/60 pb-4">
@@ -27,12 +37,19 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
                         className="w-9 h-9 object-contain"
                         draggable="false"
                     />
-                    <div className="flex flex-col">
+                    <div className="flex flex-col flex-1">
                         <h1 className="font-bold text-base text-slate-900 leading-tight">
                             My Notes
                         </h1>
                         <p className="text-xs text-slate-600">Write. Save. Remember.</p>
                     </div>
+                    <button
+                        type="button"
+                        onClick={onClose}
+                        className="md:hidden text-slate-400 hover:text-rose-600 p-1 rounded-lg hover:bg-rose-100/50 transition-colors"
+                    >
+                        <X className="w-5 h-5" />
+                    </button>
                 </header>
 
                 <nav className="flex flex-col gap-1">
@@ -46,8 +63,8 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
                                 key={item.id}
                                 onClick={() => setActiveTab(item.id)}
                                 className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors w-full ${isActive
-                                        ? "bg-rose-100/70 text-slate-900"
-                                        : "text-slate-600 hover:bg-rose-100/40 hover:text-slate-900"
+                                    ? "bg-rose-100/70 text-slate-900"
+                                    : "text-slate-600 hover:bg-rose-100/40 hover:text-slate-900"
                                     }`}
                             >
                                 <div className="flex items-center gap-2.5">
@@ -59,8 +76,8 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
                                 </div>
                                 <span
                                     className={`px-2 py-0.5 rounded-full text-xs font-semibold ${isActive
-                                            ? "bg-rose-500 text-white"
-                                            : "bg-rose-100/60 text-slate-600"
+                                        ? "bg-rose-500 text-white"
+                                        : "bg-rose-100/60 text-slate-600"
                                         }`}
                                 >
                                     {item.count}

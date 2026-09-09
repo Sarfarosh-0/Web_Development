@@ -32,7 +32,7 @@ function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab }:
                 </h1>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 h-108 overflow-auto scrollbar-none">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {filteredNotes.length > 0 ? (
                     filteredNotes.map((note) => (
                         <Notebox

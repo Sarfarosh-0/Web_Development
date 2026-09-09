@@ -68,6 +68,7 @@ function App() {
     };
 
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     function clearAllData() {
         localStorage.removeItem('notes');
@@ -90,12 +91,25 @@ function App() {
 
     return (
         <div className="flex min-h-screen bg-rose-50/30">
+
+            {isSidebarOpen && (
+                <div
+                    className="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm md:hidden"
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
+
             <Sidebar
                 allnotes={allNotesCount}
                 deletedNotesCount={allDeletedNotesCount}
                 activeTab={activeTab}
-                setActiveTab={setActiveTab}
+                setActiveTab={(tab) => {
+                    setActiveTab(tab);
+                    setIsSidebarOpen(false);
+                }}
                 clearAllData={() => setIsConfirmOpen(true)}
+                isSidebarOpen={isSidebarOpen}
+                onClose={() => setIsSidebarOpen(false)}
             />
             <Main
                 openModal={openModal}
@@ -112,6 +126,7 @@ function App() {
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
                 deleteNote={deleteNote}
+                onOpenSidebar={() => setIsSidebarOpen(true)}
             />
 
             <ConfirmModal
