@@ -6,7 +6,7 @@ interface ContainerProps {
 
 export default function Emptynotes({ openModal }: ContainerProps) {
     return (
-        <div className="col-span-full flex flex-col items-center justify-center min-h-96 rounded-2xl border border-rose-200/80 bg-linear-to-b from-rose-50/50 to-purple-50/50 text-center">
+        <div className="col-span-full flex flex-col items-center justify-center w-full min-h-96 rounded-2xl border border-rose-200/80 bg-linear-to-b from-rose-50/50 to-purple-50/50 text-center">
 
             <button
                 onClick={openModal}
