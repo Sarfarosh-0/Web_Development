@@ -46,7 +46,20 @@ function App() {
         closeModal();
     }
 
+    const [deletedNotes, setDeletedNotes] = useState<Note[]>(() => {
+        const deletedstored = localStorage.getItem("deletedNotes");
+        return deletedstored ? JSON.parse(deletedstored) : [];
+    });
+
+    function addDeletedNote(idToDelete: string) {
+        const deletedNote = notes.filter((note) => note.id == idToDelete)
+        const updatedDeletdNote = [...deletedNotes, deletedNote];
+        setDeletedNotes(updatedDeletdNote);
+        localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletdNote));
+    }
+
     const deleteNote = (idToDelete: string) => {
+        addDeletedNote(idToDelete)
         const updatedNotes = notes.filter((note) => note.id !== idToDelete);
         setNotes(updatedNotes);
         localStorage.setItem("notes", JSON.stringify(updatedNotes));
