@@ -1,4 +1,4 @@
-import { NotepadText, Trash2 } from "lucide-react";
+import { NotepadText,  Trash2 } from "lucide-react";
 
 export type TabType = "all-notes" | "trash";
 

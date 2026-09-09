@@ -3,6 +3,7 @@ import Header from "./Header";
 import NotesContainer from "./NotesContainer";
 import Searchbar from "./Searchbar";
 import type { Note } from "../App";
+import type {TabType} from "./Sidebar";
 
 interface MainProps {
     openModal: () => void;
@@ -18,7 +19,7 @@ interface MainProps {
     setNoteTitle: (value: string) => void;
     setNoteDetails: (value: string) => void;
     deleteNote: (id: string) => void;
-    activeTab: "all-notes" | "trash";
+    activeTab: TabType;
 }
 
 function Main({

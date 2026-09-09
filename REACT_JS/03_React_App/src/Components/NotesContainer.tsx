@@ -1,16 +1,23 @@
 import Emptynotes from "./EmptyNotes";
 import Notebox from "./Notebox";
 import type { Note } from "../App";
+import type {TabType} from "./Sidebar";
 
 interface ContainerProps {
     openModal(): void;
     notes: Note[];
-    // searchTerm: string;
+    searchTerm: string;
     deleteNote: (id: string) => void;
-    activeTab: "all-notes" | "trash";
+    activeTab: TabType;
 }
 
-function NotesContainer({ openModal, notes, deleteNote, activeTab }: ContainerProps) {
+function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab }: ContainerProps) {
+
+    const term = searchTerm.toLowerCase();
+    const filteredNotes = notes.filter((note) =>
+        note.title.toLowerCase().includes(term) ||
+        note.details.toLowerCase().includes(term)
+    );
 
     const containerTitle = activeTab === "all-notes" ? "All Notes" : "Trash";
 
@@ -20,14 +27,14 @@ function NotesContainer({ openModal, notes, deleteNote, activeTab }: ContainerPr
                 <h1 className="text-2xl font-bold text-slate-800 tracking-tight flex items-center gap-2">
                     {containerTitle}
                     <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600 border border-rose-200/60">
-                        {notes.length}
+                        {filteredNotes.length}
                     </span>
                 </h1>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 h-108 overflow-auto scrollbar-none">
-                {notes.length > 0 ? (
-                    notes.map((note) => (
+                {filteredNotes.length > 0 ? (
+                    filteredNotes.map((note) => (
                         <Notebox
                             key={note.id}
                             title={note.title}

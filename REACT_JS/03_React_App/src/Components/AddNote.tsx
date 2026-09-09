@@ -6,8 +6,8 @@ interface AddNoteProps {
     noteTitle: string;
     noteDetails: string;
     date: string;
-    setNoteTitle: any;
-    setNoteDetails: any;
+    setNoteTitle: (value: string) => void;
+    setNoteDetails: (value: string) => void;
 }
 
 function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNoteDetails}: AddNoteProps) {

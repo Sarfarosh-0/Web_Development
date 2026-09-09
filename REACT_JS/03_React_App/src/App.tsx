@@ -31,11 +31,6 @@ function App() {
 
     const sourceNotes = activeTab === "all-notes" ? notes : deletedNotes;
 
-    const filteredNotes = sourceNotes.filter((note) =>
-        note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        note.details.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
     function addNote() {
         if (!noteTitle.trim()) return;
 
@@ -86,7 +81,7 @@ function App() {
             />
             <Main
                 openModal={openModal}
-                notes={filteredNotes}
+                notes={sourceNotes}
                 activeTab={activeTab}
                 isOpen={isOpen}
                 closeModal={closeModal}
