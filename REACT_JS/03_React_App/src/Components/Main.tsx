@@ -18,6 +18,7 @@ interface MainProps {
     setNoteTitle: (value: string) => void;
     setNoteDetails: (value: string) => void;
     deleteNote: (id: string) => void;
+    activeTab: "all-notes" | "trash";
 }
 
 function Main({
@@ -34,6 +35,7 @@ function Main({
     searchTerm,
     setSearchTerm,
     deleteNote,
+    activeTab,
 }: MainProps) {
     return (
         <main className="px-4 py-3 min-h-screen bg-rose-50/30 flex flex-col gap-3 flex-1">
@@ -45,6 +47,7 @@ function Main({
                 notes={notes}
                 searchTerm={searchTerm}
                 deleteNote={deleteNote}
+                activeTab={activeTab}
             />
 
             {isOpen && (

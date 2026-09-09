@@ -17,6 +17,7 @@ function App() {
     const [noteTitle, setNoteTitle] = useState("");
     const [noteDetails, setNoteDetails] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
+    const [activeTab, setActiveTab] = useState<"all-notes" | "trash">("all-notes");
 
     const [notes, setNotes] = useState<Note[]>(() => {
         const stored = localStorage.getItem("notes");
@@ -28,7 +29,9 @@ function App() {
         return deletedstored ? JSON.parse(deletedstored) : [];
     });
 
-    const filteredNotes = notes.filter((note) =>
+    const sourceNotes = activeTab === "all-notes" ? notes : deletedNotes;
+
+    const filteredNotes = sourceNotes.filter((note) =>
         note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         note.details.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -75,10 +78,16 @@ function App() {
 
     return (
         <div className="flex min-h-screen bg-rose-50/30">
-            <Sidebar allnotes={allNotesCount} deletedNotesCount={allDeletedNotesCount}/>
+            <Sidebar
+                allnotes={allNotesCount}
+                deletedNotesCount={allDeletedNotesCount}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+            />
             <Main
                 openModal={openModal}
                 notes={filteredNotes}
+                activeTab={activeTab}
                 isOpen={isOpen}
                 closeModal={closeModal}
                 onSave={addNote}

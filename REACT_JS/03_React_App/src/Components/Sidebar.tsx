@@ -1,15 +1,20 @@
-import { useState } from "react";
-import { NotepadText, Star, Trash2 } from "lucide-react";
+import { NotepadText, Trash2 } from "lucide-react";
 
+export type TabType = "all-notes" | "trash";
 
-function Sidebar({ allnotes, deletedNotesCount }: { allnotes: number, deletedNotesCount: number }) {
-    const [activeTab, setActiveTab] = useState("all-notes");
+interface SidebarProps {
+    allnotes: number;
+    deletedNotesCount: number;
+    activeTab: TabType;
+    setActiveTab: (tab: TabType) => void;
+}
 
-    const NAV_ITEMS = [
+function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab }: SidebarProps) {
+    const NAV_ITEMS: { id: TabType; label: string; icon: typeof NotepadText; count: number }[] = [
         { id: "all-notes", label: "All Notes", icon: NotepadText, count: allnotes },
-        // { id: "favorites", label: "Favorites", icon: Star, count: 0 },
         { id: "trash", label: "Trash", icon: Trash2, count: deletedNotesCount },
     ];
+
     return (
         <aside className="w-64 h-150 bg-linear-to-b from-rose-50 to-purple-50 border-r border-rose-200/80 p-5 flex flex-col justify-between select-none">
             <div className="flex flex-col gap-4">
@@ -35,13 +40,13 @@ function Sidebar({ allnotes, deletedNotesCount }: { allnotes: number, deletedNot
                         const isActive = activeTab === item.id;
 
                         return (
-                            <a
+                            <button
+                                type="button"
                                 key={item.id}
-                                href={`#${item.id}`}
                                 onClick={() => setActiveTab(item.id)}
-                                className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive
-                                    ? "bg-rose-100/70 text-slate-900"
-                                    : "text-slate-600 hover:bg-rose-100/40 hover:text-slate-900"
+                                className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors w-full ${isActive
+                                        ? "bg-rose-100/70 text-slate-900"
+                                        : "text-slate-600 hover:bg-rose-100/40 hover:text-slate-900"
                                     }`}
                             >
                                 <div className="flex items-center gap-2.5">
@@ -53,13 +58,13 @@ function Sidebar({ allnotes, deletedNotesCount }: { allnotes: number, deletedNot
                                 </div>
                                 <span
                                     className={`px-2 py-0.5 rounded-full text-xs font-semibold ${isActive
-                                        ? "bg-rose-500 text-white"
-                                        : "bg-rose-100/60 text-slate-600"
+                                            ? "bg-rose-500 text-white"
+                                            : "bg-rose-100/60 text-slate-600"
                                         }`}
                                 >
                                     {item.count}
                                 </span>
-                            </a>
+                            </button>
                         );
                     })}
                 </nav>
