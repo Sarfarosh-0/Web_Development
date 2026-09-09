@@ -23,7 +23,10 @@ function App() {
         return stored ? JSON.parse(stored) : [];
     });
 
-    const allNotesCount: number = notes.length;
+    const [deletedNotes, setDeletedNotes] = useState<Note[]>(() => {
+        const deletedstored = localStorage.getItem("deletedNotes");
+        return deletedstored ? JSON.parse(deletedstored) : [];
+    });
 
     const filteredNotes = notes.filter((note) =>
         note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -46,24 +49,21 @@ function App() {
         closeModal();
     }
 
-    const [deletedNotes, setDeletedNotes] = useState<Note[]>(() => {
-        const deletedstored = localStorage.getItem("deletedNotes");
-        return deletedstored ? JSON.parse(deletedstored) : [];
-    });
-
-    function addDeletedNote(idToDelete: string) {
-        const deletedNote = notes.filter((note) => note.id == idToDelete)
-        const updatedDeletdNote = [...deletedNotes, deletedNote];
-        setDeletedNotes(updatedDeletdNote);
-        localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletdNote));
-    }
-
     const deleteNote = (idToDelete: string) => {
-        addDeletedNote(idToDelete)
+        const noteToDelete = notes.find((note) => note.id === idToDelete);
+        if (!noteToDelete) return;
+
+        const updatedDeletedNotes = [...deletedNotes, noteToDelete];
+        setDeletedNotes(updatedDeletedNotes);
+        localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletedNotes));
+
         const updatedNotes = notes.filter((note) => note.id !== idToDelete);
         setNotes(updatedNotes);
         localStorage.setItem("notes", JSON.stringify(updatedNotes));
     };
+
+    const allNotesCount: number = notes.length;
+    const allDeletedNotesCount: number = deletedNotes.length;
 
     const openModal = (): void => setIsOpen(true);
 
@@ -75,7 +75,7 @@ function App() {
 
     return (
         <div className="flex min-h-screen bg-rose-50/30">
-            <Sidebar allnotes={allNotesCount} />
+            <Sidebar allnotes={allNotesCount} deletedNotesCount={allDeletedNotesCount}/>
             <Main
                 openModal={openModal}
                 notes={filteredNotes}
