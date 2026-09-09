@@ -1,7 +1,7 @@
 import Emptynotes from "./EmptyNotes";
 import Notebox from "./Notebox";
 import type { Note } from "../App";
-import type {TabType} from "./Sidebar";
+import type { TabType } from "./Sidebar";
 
 interface ContainerProps {
     openModal(): void;
@@ -12,11 +12,11 @@ interface ContainerProps {
 }
 
 function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab }: ContainerProps) {
+    const term = (searchTerm || "").toLowerCase();
 
-    const term = searchTerm.toLowerCase();
     const filteredNotes = notes.filter((note) =>
-        note.title.toLowerCase().includes(term) ||
-        note.details.toLowerCase().includes(term)
+        (note?.title ?? "").toLowerCase().includes(term) ||
+        (note?.details ?? "").toLowerCase().includes(term)
     );
 
     const containerTitle = activeTab === "all-notes" ? "All Notes" : "Trash";

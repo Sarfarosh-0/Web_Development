@@ -5,6 +5,7 @@ interface NoteAttributes {
     details: string;
     date: string;
     onDelete?: () => void;
+    isTrash?: boolean;
 }
 
 export default function Notebox({ title, details, date, onDelete }: NoteAttributes) {

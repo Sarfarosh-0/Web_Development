@@ -48,16 +48,22 @@ function App() {
     }
 
     const deleteNote = (idToDelete: string) => {
-        const noteToDelete = notes.find((note) => note.id === idToDelete);
-        if (!noteToDelete) return;
+        if (activeTab === "all-notes") {
+            const noteToDelete = notes.find((note) => note.id === idToDelete);
+            if (!noteToDelete) return;
 
-        const updatedDeletedNotes = [...deletedNotes, noteToDelete];
-        setDeletedNotes(updatedDeletedNotes);
-        localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletedNotes));
+            const updatedDeletedNotes = [...deletedNotes, noteToDelete];
+            setDeletedNotes(updatedDeletedNotes);
+            localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletedNotes));
 
-        const updatedNotes = notes.filter((note) => note.id !== idToDelete);
-        setNotes(updatedNotes);
-        localStorage.setItem("notes", JSON.stringify(updatedNotes));
+            const updatedNotes = notes.filter((note) => note.id !== idToDelete);
+            setNotes(updatedNotes);
+            localStorage.setItem("notes", JSON.stringify(updatedNotes));
+        } else {
+            const updatedDeletedNotes = deletedNotes.filter((note) => note.id !== idToDelete);
+            setDeletedNotes(updatedDeletedNotes);
+            localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletedNotes));
+        }
     };
 
     const allNotesCount: number = notes.length;

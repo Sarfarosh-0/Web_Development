@@ -3,7 +3,7 @@ import Header from "./Header";
 import NotesContainer from "./NotesContainer";
 import Searchbar from "./Searchbar";
 import type { Note } from "../App";
-import type {TabType} from "./Sidebar";
+import type { TabType } from "./Sidebar";
 
 interface MainProps {
     openModal: () => void;
