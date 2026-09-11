@@ -3,6 +3,7 @@ import { useState } from "react";
 import Main from "./Components/Main";
 import Sidebar from "./Components/Sidebar";
 import ConfirmModal from "./Components/ConfirmModal";
+import EmptyTrashCan from "./Components/EmptyTrash";
 
 export interface Note {
     id: string;
@@ -81,6 +82,7 @@ function App() {
     }
 
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+    const [isEmptyOpen, setIsEmptyOpen] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     function clearAllData() {
@@ -107,7 +109,7 @@ function App() {
     };
 
     return (
-        <div className="flex min-h-screen bg-[#FFFBF8]">
+        <div className="flex min-h-screen w-full items-stretch bg-[#FFFBF8]">
 
             {isSidebarOpen && (
                 <div
@@ -128,11 +130,11 @@ function App() {
                 isSidebarOpen={isSidebarOpen}
                 onClose={() => setIsSidebarOpen(false)}
             />
+
             <Main
                 openModal={openModal}
                 notes={sourceNotes}
                 activeTab={activeTab}
-                isOpen={isOpen}
                 closeModal={closeModal}
                 onSave={addNote}
                 noteTitle={noteTitle}
@@ -145,7 +147,10 @@ function App() {
                 deleteNote={deleteNote}
                 onOpenSidebar={() => setIsSidebarOpen(true)}
                 restoreNote={restoreNote}
-                emptyTrash={emptyTrash}
+                isOpen={isOpen}
+                isEmptyOpen={isEmptyOpen}
+                onOpenEmptyTrash={() => setIsEmptyOpen(true)}
+                onClose={() => setIsEmptyOpen(false)}
             />
 
             <ConfirmModal
@@ -153,9 +158,19 @@ function App() {
                 onClose={() => setIsConfirmOpen(false)}
                 onConfirm={clearAllData}
                 title="Clear all application data?"
-                message="This will permanently delete all your active notes and trash notes. This action cannot be undone."
+                message="This will permanently delete all your active notes. This action cannot be undone."
                 confirmText="Yes, Clear All"
             />
+
+            <EmptyTrashCan
+                isOpen={isEmptyOpen}
+                onClose={() => setIsEmptyOpen(false)}
+                onConfirm={emptyTrash}
+                title="Empty Trash Can?"
+                message="This will permanently delete all your deleted notes. This action cannot be undone."
+                confirmText="Yes, Clear All"
+            />
+
         </div>
     );
 }

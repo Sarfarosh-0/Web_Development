@@ -22,7 +22,9 @@ interface MainProps {
     activeTab: TabType;
     onOpenSidebar: () => void;
     restoreNote: (id: string) => void;
-    emptyTrash?: () => void;
+    onOpenEmptyTrash?: () => void;
+    isEmptyOpen?: boolean;
+    onClose?: () => void;
 }
 
 function Main({
@@ -42,7 +44,7 @@ function Main({
     activeTab,
     onOpenSidebar,
     restoreNote,
-    emptyTrash,
+    onOpenEmptyTrash,
 }: MainProps) {
     return (
         <main className="px-4 py-3 min-h-screen bg-[#FAF2ED] flex flex-col gap-3 flex-1">
@@ -56,8 +58,7 @@ function Main({
                 deleteNote={deleteNote}
                 activeTab={activeTab}
                 restoreNote={restoreNote}
-                isOpen={isOpen}
-                emptyTrash={emptyTrash}
+                onOpenEmptyTrash={onOpenEmptyTrash}
             />
 
             {isOpen && (

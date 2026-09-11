@@ -11,16 +11,24 @@ interface ContainerProps {
     deleteNote: (id: string) => void;
     activeTab: TabType;
     restoreNote: (id: string) => void;
-    emptyTrash?: () => void;
-    isOpen: boolean;
+    onOpenEmptyTrash?: () => void;
 }
 
-function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab, restoreNote, emptyTrash }: ContainerProps) {
+function NotesContainer({
+    openModal,
+    notes,
+    searchTerm,
+    deleteNote,
+    activeTab,
+    restoreNote,
+    onOpenEmptyTrash,
+}: ContainerProps) {
     const term = (searchTerm || "").toLowerCase();
 
-    const filteredNotes = notes.filter((note) =>
-        (note?.title ?? "").toLowerCase().includes(term) ||
-        (note?.details ?? "").toLowerCase().includes(term)
+    const filteredNotes = notes.filter(
+        (note) =>
+            (note?.title ?? "").toLowerCase().includes(term) ||
+            (note?.details ?? "").toLowerCase().includes(term)
     );
 
     const containerTitle = activeTab === "all-notes" ? "All Notes" : "Trash";
@@ -39,12 +47,12 @@ function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab, r
                     {isTrash && filteredNotes.length > 0 && (
                         <button
                             type="button"
-                            onClick={emptyTrash}
+                            onClick={onOpenEmptyTrash}
                             aria-label="Empty Trash"
                             title="Empty Trash"
-                            className="flex items-center justify-center gap-2 px-2 py-1 rounded-lg text-xs font-semibold text-[#FF8038] bg-[#FFFBF8] hover:bg-[#F16B27] hover:text-white border border-[#F6D3BE] active:scale-95 transition-all duration-150 shadow-xs cursor-pointer group"
+                            className="flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-[#FF8038] bg-[#FFFBF8] hover:bg-[#F16B27] hover:text-white border border-[#F6D3BE] active:scale-95 transition-all duration-150 shadow-xs cursor-pointer group"
                         >
-                            <BroomSparkles />
+                            <BroomSparkles className="w-4 h-4" />
                             <span>Empty Trash</span>
                         </button>
                     )}
