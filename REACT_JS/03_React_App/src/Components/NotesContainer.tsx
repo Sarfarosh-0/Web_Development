@@ -26,14 +26,14 @@ function NotesContainer({ openModal, notes, searchTerm, deleteNote, activeTab, r
         <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between px-2 py-1">
                 <div className="flex items-center gap-2.5">
-                    <h1 className="text-3xl font-bold text-slate-800 tracking-tight">
+                    <h1 className="text-3xl font-bold text-[#2D1E18] tracking-tight">
                         {containerTitle}
                     </h1>
                 </div>
 
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50/80 border border-sky-200/60 shadow-2xs backdrop-blur-xs">
-                    <span className="text-base font-medium text-slate-500">Total Notes</span>
-                    <span className="text-base font-bold text-sky-600 bg-sky-100/80 px-2 py-0.5 rounded-full">
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F6ECE6] border border-[#F3E1D5] shadow-2xs backdrop-blur-xs">
+                    <span className="text-base font-medium text-[#5C4D46]">Total Notes</span>
+                    <span className="text-base font-bold text-[#D95213] bg-[#FBE3D5] px-2 py-0.5 rounded-full">
                         {filteredNotes.length}
                     </span>
                 </div>

@@ -103,11 +103,11 @@ function App() {
     };
 
     return (
-        <div className="flex min-h-screen bg-sky-50/30">
+        <div className="flex min-h-screen bg-[#FFFBF8]">
 
             {isSidebarOpen && (
                 <div
-                    className="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm md:hidden"
+                    className="fixed inset-0 z-40 bg-[#2D1E18]/40 backdrop-blur-sm md:hidden"
                     onClick={() => setIsSidebarOpen(false)}
                 />
             )}

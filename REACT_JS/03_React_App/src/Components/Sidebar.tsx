@@ -21,8 +21,8 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
     return (
         <aside className={`
             fixed z-50 top-0 left-0 h-full w-64
-            bg-linear-to-b from-sky-50 to-indigo-50
-            border-r border-sky-200/80 p-5
+            bg-[#F6ECE6]
+            border-r border-[#F3E1D5] p-5
             flex flex-col justify-between select-none
             transition-transform duration-300
             ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
@@ -30,7 +30,7 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
         `}>
             <div className="flex flex-col gap-4">
 
-                <header className="flex items-center gap-3 border-b border-sky-200/60 pb-4">
+                <header className="flex items-center gap-3 border-b border-[#F3E1D5] pb-4">
                     <img
                         src="https://cdn-icons-png.flaticon.com/128/3075/3075908.png"
                         alt="Logo"
@@ -38,15 +38,15 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
                         draggable="false"
                     />
                     <div className="flex flex-col flex-1">
-                        <h1 className="font-bold text-base text-slate-900 leading-tight">
+                        <h1 className="font-bold text-base text-[#2D1E18] leading-tight">
                             My Notes
                         </h1>
-                        <p className="text-xs text-slate-600">Write. Save. Remember.</p>
+                        <p className="text-xs text-[#5C4D46]">Write. Save. Remember.</p>
                     </div>
                     <button
                         type="button"
                         onClick={onClose}
-                        className="md:hidden text-slate-400 hover:text-sky-600 p-1 rounded-lg hover:bg-sky-100/50 transition-colors"
+                        className="md:hidden text-[#9E8C83] hover:text-[#F16B27] p-1 rounded-lg hover:bg-[#F6E3D8] transition-colors"
                     >
                         <X className="w-5 h-5" />
                     </button>
@@ -63,21 +63,21 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
                                 key={item.id}
                                 onClick={() => setActiveTab(item.id)}
                                 className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors w-full ${isActive
-                                    ? "bg-sky-100/70 text-slate-900"
-                                    : "text-slate-600 hover:bg-sky-100/40 hover:text-slate-900"
+                                    ? "bg-[#F6E3D8] text-[#2D1E18]"
+                                    : "text-[#5C4D46] hover:bg-[#FAF2ED] hover:text-[#2D1E18]"
                                     }`}
                             >
                                 <div className="flex items-center gap-2.5">
                                     <Icon
-                                        className={`w-4 h-4 ${isActive ? "text-sky-500" : "text-slate-500"
+                                        className={`w-4 h-4 ${isActive ? "text-[#F16B27]" : "text-[#9E8C83]"
                                             }`}
                                     />
                                     <span>{item.label}</span>
                                 </div>
                                 <span
                                     className={`px-2 py-0.5 rounded-full text-xs font-semibold ${isActive
-                                        ? "bg-sky-500 text-white"
-                                        : "bg-sky-100/60 text-slate-600"
+                                        ? "bg-[#F16B27] text-white"
+                                        : "bg-[#FBE3D5] text-[#D95213]"
                                         }`}
                                 >
                                     {item.count}
@@ -92,21 +92,21 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
                 <button
                     type="button"
                     onClick={clearAllData}
-                    className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-sky-600 bg-sky-100/50 hover:bg-sky-500 hover:text-white border border-sky-200/80 active:scale-95 transition-all duration-150 shadow-xs cursor-pointer group"
+                    className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-[#FF8038] bg-[#FFFBF8] hover:bg-[#F16B27] hover:text-white border border-[#F6D3BE] active:scale-95 transition-all duration-150 shadow-xs cursor-pointer group"
                 >
-                    <DatabaseX className="w-4 h-4 text-sky-500 group-hover:text-white transition-colors" />
+                    <DatabaseX className="w-4 h-4 text-[#FF8038] group-hover:text-white transition-colors" />
                     <span>Clear All Data</span>
                 </button>
 
-                <div className="pt-3 border-t border-sky-200/60 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center font-bold text-xs shrink-0">
+                <div className="pt-3 border-t border-[#F3E1D5] flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#FBE3D5] text-[#D95213] flex items-center justify-center font-bold text-xs shrink-0">
                         SA
                     </div>
                     <div className="flex flex-col text-xs overflow-hidden">
-                        <span className="font-semibold text-slate-800 truncate">
+                        <span className="font-semibold text-[#2D1E18] truncate">
                             Sarfarosh Alam
                         </span>
-                        <span className="text-slate-500 truncate">
+                        <span className="text-[#9E8C83] truncate">
                             sarfaroshalam51@gmail.com
                         </span>
                     </div>

@@ -43,7 +43,7 @@ function Main({
     restoreNote,
 }: MainProps) {
     return (
-        <main className="px-4 py-3 min-h-screen bg-sky-50/30 flex flex-col gap-3 flex-1">
+        <main className="px-4 py-3 min-h-screen bg-[#FAF2ED] flex flex-col gap-3 flex-1">
             <Header openModal={openModal} onOpenSidebar={onOpenSidebar} />
             <Searchbar searchTerm={searchTerm} setSearch={setSearchTerm} />
 

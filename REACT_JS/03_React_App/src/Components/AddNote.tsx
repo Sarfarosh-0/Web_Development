@@ -10,18 +10,18 @@ interface AddNoteProps {
     setNoteDetails: (value: string) => void;
 }
 
-function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNoteDetails}: AddNoteProps) {
+function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNoteDetails }: AddNoteProps) {
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
-            <div className="w-full max-w-xl bg-linear-to-b from-sky-50 to-indigo-50 rounded-xl shadow-xl border border-sky-200/80 flex flex-col p-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#2D1E18]/40 backdrop-blur-sm p-4">
+            <div className="w-full max-w-xl bg-[#FAF2ED] rounded-xl shadow-xl border border-[#F3E1D5] flex flex-col p-6">
 
                 {/* Header */}
-                <div className="flex items-center justify-between pb-4 border-b border-sky-200/60">
-                    <h1 className="font-bold text-xl text-slate-900">Add New Note</h1>
+                <div className="flex items-center justify-between pb-4 border-b border-[#F3E1D5]">
+                    <h1 className="font-bold text-xl text-[#2D1E18]">Add New Note</h1>
                     <button
                         type="button"
                         onClick={onClose}
-                        className="text-slate-400 hover:text-sky-600 hover:bg-sky-100/50 p-1.5 active:scale-95 rounded-lg transition-colors"
+                        className="text-[#9E8C83] hover:text-[#F16B27] hover:bg-[#F6E3D8] p-1.5 active:scale-95 rounded-lg transition-colors"
                     >
                         <X className="w-5 h-5" />
                     </button>
@@ -30,7 +30,7 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNot
                 {/* Form Body */}
                 <div className="flex flex-col gap-4 pt-4">
                     <div className="flex flex-col gap-1.5">
-                        <label htmlFor="noteTitle" className="text-sm font-semibold text-slate-700">
+                        <label htmlFor="noteTitle" className="text-sm font-semibold text-[#5C4D46]">
                             Title
                         </label>
                         <input
@@ -38,14 +38,14 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNot
                             value={noteTitle}
                             onChange={(e) => setNoteTitle(e.target.value)}
                             id="noteTitle"
-                            className="w-full px-3.5 py-2 border bg-white/80 border-sky-200/80 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition-all placeholder:text-slate-400"
+                            className="w-full px-3.5 py-2 border bg-[#FFFBF8] border-[#F3E1D5] rounded-lg text-sm text-[#2D1E18] focus:outline-none focus:border-[#F16B27] focus:ring-2 focus:ring-[#FBE3D5] transition-all placeholder:text-[#9E8C83]"
                             placeholder="Enter note title..."
                             required
                         />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                        <label htmlFor="noteContent" className="text-sm font-semibold text-slate-700">
+                        <label htmlFor="noteContent" className="text-sm font-semibold text-[#5C4D46]">
                             Content
                         </label>
                         <textarea
@@ -53,18 +53,18 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNot
                             onChange={(e) => setNoteDetails(e.target.value)}
                             id="noteContent"
                             rows={8}
-                            className="w-full px-3.5 py-2 border bg-white/80 border-sky-200/80 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition-all placeholder:text-slate-400 resize-none"
+                            className="w-full px-3.5 py-2 border bg-[#FFFBF8] border-[#F3E1D5] rounded-lg text-sm text-[#2D1E18] focus:outline-none focus:border-[#F16B27] focus:ring-2 focus:ring-[#FBE3D5] transition-all placeholder:text-[#9E8C83] resize-none"
                             placeholder="Write your note here..."
                             required
                         />
                     </div>
 
                     {/* Actions */}
-                    <div className="flex justify-end gap-3 pt-4 border-t border-sky-200/60 mt-2">
+                    <div className="flex justify-end gap-3 pt-4 border-t border-[#F3E1D5] mt-2">
                         <button
                             type="button"
                             onClick={onClose}
-                            className="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-sky-100/50 transition-colors"
+                            className="px-4 py-2 rounded-lg text-sm font-medium text-[#5C4D46] hover:bg-[#F6E3D8] transition-colors"
                         >
                             Cancel
                         </button>
@@ -73,7 +73,7 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNot
                                 onSave();
                             }}
                             type="submit"
-                            className="px-4 py-2 rounded-lg text-sm font-medium bg-sky-500 text-white hover:bg-sky-600 shadow-sm transition-colors"
+                            className="px-4 py-2 rounded-lg text-sm font-medium bg-[#F16B27] text-white hover:bg-[#D95213] shadow-sm transition-colors"
                         >
                             Save Note
                         </button>
