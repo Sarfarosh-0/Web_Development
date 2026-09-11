@@ -85,8 +85,12 @@ function App() {
 
     function clearAllData() {
         localStorage.removeItem('notes');
-        localStorage.removeItem('deletedNotes');
         setNotes([]);
+        setSearchTerm("");
+    }
+
+    function emptyTrash() {
+        localStorage.removeItem('deletedNotes');
         setDeletedNotes([]);
         setSearchTerm("");
     }
@@ -141,6 +145,7 @@ function App() {
                 deleteNote={deleteNote}
                 onOpenSidebar={() => setIsSidebarOpen(true)}
                 restoreNote={restoreNote}
+                emptyTrash={emptyTrash}
             />
 
             <ConfirmModal
