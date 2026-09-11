@@ -158,7 +158,7 @@ function App() {
                 onClose={() => setIsConfirmOpen(false)}
                 onConfirm={clearAllData}
                 title="Clear all application data?"
-                message="This will permanently delete all your active notes. This action cannot be undone."
+                message="This will permanently delete all your active notes. It will also clear your deleted notes. Are you sure you want to proceed?"
                 confirmText="Yes, Clear All"
             />
 

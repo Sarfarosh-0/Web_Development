@@ -95,7 +95,7 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
                     className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-[#FF8038] bg-[#FFFBF8] hover:bg-[#F16B27] hover:text-white border border-[#F6D3BE] active:scale-95 transition-all duration-150 shadow-xs cursor-pointer group"
                 >
                     <DatabaseX className="w-4 h-4 text-[#FF8038] group-hover:text-white transition-colors" />
-                    <span>Clear All Data</span>
+                    <span>Clear All Notes</span>
                 </button>
 
                 <div className="pt-3 border-t border-[#F3E1D5] flex items-center gap-3">
