@@ -11,6 +11,11 @@ interface AddNoteProps {
 }
 
 function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNoteDetails }: AddNoteProps) {
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        onSave();
+    };
+
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#2D1E18]/40 backdrop-blur-sm p-4">
             <div className="w-full max-w-xl bg-[#FAF2ED] rounded-xl shadow-xl border border-[#F3E1D5] flex flex-col p-6">
@@ -27,8 +32,7 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNot
                     </button>
                 </div>
 
-                {/* Form Body */}
-                <div className="flex flex-col gap-4 pt-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 pt-4">
                     <div className="flex flex-col gap-1.5">
                         <label htmlFor="noteTitle" className="text-sm font-semibold text-[#5C4D46]">
                             Title
@@ -59,7 +63,6 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNot
                         />
                     </div>
 
-                    {/* Actions */}
                     <div className="flex justify-end gap-3 pt-4 border-t border-[#F3E1D5] mt-2">
                         <button
                             type="button"
@@ -69,16 +72,13 @@ function AddNote({ onClose, onSave, noteTitle, noteDetails, setNoteTitle, setNot
                             Cancel
                         </button>
                         <button
-                            onClick={() => {
-                                onSave();
-                            }}
                             type="submit"
-                            className="px-4 py-2 rounded-lg text-sm font-medium bg-[#F16B27] text-white hover:bg-[#D95213] shadow-sm transition-colors"
+                            className="px-4 py-2 rounded-lg text-sm font-medium bg-[#F16B27] text-white hover:bg-[#D95213] shadow-sm transition-colors cursor-pointer"
                         >
                             Save Note
                         </button>
                     </div>
-                </div>
+                </form>
 
             </div>
         </div>

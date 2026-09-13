@@ -46,6 +46,9 @@ function App() {
         const updatedNotes = [...notes, newNote];
         setNotes(updatedNotes);
         localStorage.setItem("notes", JSON.stringify(updatedNotes));
+
+        setNoteTitle("");
+        setNoteDetails("");
         closeModal();
     }
 
