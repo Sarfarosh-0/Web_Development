@@ -7,7 +7,7 @@ interface HeaderProps {
 
 function Header({ openModal, onOpenSidebar }: HeaderProps) {
     return (
-        <header className="w-full sticky top-0 z-10 right-0 px-5 py-2.5 border border-[#F3E1D5] bg-linear-to-b from-[#FFFBF8] to-[#FAF2ED] rounded-xl flex justify-between items-center shadow-sm">
+        <header className="w-full sticky top-0 z-10 right-0 px-5 py-2.5 border border-[#F3E1D5] bg-linear-to-b from-[#FFFBF8] to-[#FAF2ED] rounded-xl flex justify-between items-center shadow-sm select-none">
             <div className="flex items-center gap-3">
                 <button
                     type="button"

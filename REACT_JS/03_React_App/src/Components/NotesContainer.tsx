@@ -35,7 +35,7 @@ function NotesContainer({
     const isTrash = activeTab === "trash";
 
     return (
-        <div className="flex-1 flex flex-col gap-3">
+        <div className="flex-1 flex flex-col gap-3 max-h-96 overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-[#F16B27] scrollbar-track-[#FBE3D5] scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
             <div className="flex items-center justify-between px-2 py-1">
                 <div className="flex items-center gap-2.5">
                     <h1 className="text-3xl font-bold text-[#2D1E18] tracking-tight">

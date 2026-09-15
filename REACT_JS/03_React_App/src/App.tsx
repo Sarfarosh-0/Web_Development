@@ -112,7 +112,7 @@ function App() {
     };
 
     return (
-        <div className="flex min-h-screen w-full items-stretch bg-[#FFFBF8]">
+        <div className="flex min-h-screen w-full ite bg-[#FFFBF8]">
 
             {isSidebarOpen && (
                 <div
