@@ -129,6 +129,7 @@ function App() {
                     setActiveTab(tab);
                     setIsSidebarOpen(false);
                 }}
+                openModal={openModal}
                 clearAllData={() => setIsConfirmOpen(true)}
                 isSidebarOpen={isSidebarOpen}
                 onClose={() => setIsSidebarOpen(false)}

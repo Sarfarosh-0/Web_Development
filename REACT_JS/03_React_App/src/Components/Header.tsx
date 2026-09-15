@@ -25,11 +25,12 @@ function Header({ openModal, onOpenSidebar }: HeaderProps) {
 
             <button
                 id="addNoteBtn"
+                type="button"
                 onClick={openModal}
-                className="bg-[#F16B27] hover:bg-[#D95213] active:scale-95 transition-all duration-150 rounded-lg px-4 py-2 font-medium text-white flex items-center gap-2 shadow-sm"
+                className="w-40 mt-2 bg-[#F16B27] hover:bg-[#E05915] active:scale-[0.98] text-white font-semibold py-2.5 px-4 rounded-xl shadow-sm hover:shadow transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer"
             >
-                <Plus />
-                <span className="hidden sm:inline">Add Note</span>
+                <Plus className="w-5 h-5 transition-transform duration-200 group-hover:rotate-90" />
+                <span>Add Note</span>
             </button>
         </header>
     );

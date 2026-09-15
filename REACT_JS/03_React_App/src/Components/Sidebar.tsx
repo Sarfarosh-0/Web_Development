@@ -1,4 +1,4 @@
-import { NotepadText, DatabaseX, Trash2, X } from "lucide-react";
+import { NotepadText, DatabaseX, Trash2, X, Plus } from "lucide-react";
 
 export type TabType = "all-notes" | "trash";
 
@@ -10,9 +10,10 @@ interface SidebarProps {
     clearAllData?: () => void;
     isSidebarOpen: boolean;
     onClose: () => void;
+    openModal: () => void;
 }
 
-function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAllData, isSidebarOpen, onClose }: SidebarProps) {
+function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAllData, isSidebarOpen, onClose, openModal }: SidebarProps) {
     const NAV_ITEMS: { id: TabType; label: string; icon: typeof NotepadText; count: number }[] = [
         { id: "all-notes", label: "All Notes", icon: NotepadText, count: allnotes },
         { id: "trash", label: "Trash", icon: Trash2, count: deletedNotesCount },
@@ -86,6 +87,16 @@ function Sidebar({ allnotes, deletedNotesCount, activeTab, setActiveTab, clearAl
                         );
                     })}
                 </nav>
+
+                <button
+                    id="addNoteBtn"
+                    type="button"
+                    onClick={openModal}
+                    className="w-full mt-2 bg-[#F16B27] hover:bg-[#E05915] active:scale-[0.98] text-white font-semibold py-2 px-4 rounded-xl shadow-sm hover:shadow transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer"
+                >
+                    <Plus className="w-5 h-5 transition-transform duration-200 group-hover:rotate-90" />
+                    <span>Add Note</span>
+                </button>
             </div>
 
             <div className="flex flex-col gap-3">
