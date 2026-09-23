@@ -15,6 +15,7 @@ I am a complete beginner and currently have **no prior knowledge**, so everythin
 - JavaScript (basic logic and interactivity)
 - Backend and databases (later)
 - Small projects as I learn
+- React JS
 
 ## 📂 Repository Content
 - Beginner practice files
